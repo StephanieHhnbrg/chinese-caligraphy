@@ -1,0 +1,143 @@
+{
+  "HOME": {
+    "TITLE": "Welcome! 欢迎 (Huānyíng)",
+    "INTRODUCTION": "to the enchanting realm of Chinese characters.",
+    "SUBTITLE": "Embrace the challenge and beauty of learning Chinese and explore its creativity"
+  },
+  "TOOLBAR.TITLE": "Chinese Puzzle",
+  "LANGUAGE": {
+    "EN": "English",
+    "DE": "German"
+  },
+  "PINYIN": {
+    "TITLE": "Pinyin (拼音)",
+    "PINYIN_INTRODUCTION": "is the Romanization system for transcribing Mandarin sounds into Latin script. It includes tone markings to indicate the correct pronunciation.",
+    "TONE_INTRODUCTION": "Chinese is a tonal language, meaning that the pitch or intonation used when pronouncing a word can change its meaning. There are four main tones:",
+    "TONE_1": "First tone: → High and level (e.g., mā 妈 - mother)",
+    "TONE_2": "Second tone: ↗︎ Rising (e.g., má 麻 - hemp)",
+    "TONE_3": "Third tone: ↘︎↗︎ Falling-rising (e.g., mǎ 马 - horse)",
+    "TONE_4": "Fourth tone: ↘︎ Falling (e.g., mà 骂 - scold)",
+    "DOUBLE_VOCALS": {
+      "EXPLANATION": "The placement of tones in syllables with multiple vowels follows a specific set of ordered rules:",
+      "RULE_1": "If there is an a-vowel present: The tone is placed on that a-vowel (e.g., hǎo 好 good; xiǎo 小 little)",
+      "RULE_2": "If there is no a-vowel present: The tone is placed on the o- or e-vowel (e.g., kǒu 口 mounth; huǒ 火 fire; yuè 月 moon/month) - Note: Combinations like \"oe\" or \"eo\" do not occur.",
+      "RULE_3": " In cases where the above rules do not apply (absent a/o/e), the tone is placed on the last vowel (e.g., shuǐ 水 water)"
+    },
+    "CHANGING_INTONATION": {
+      "EXPLANATION": "When multiple syllables with the third tone (falling-rising ↘︎↗︎)  appear consecutively, the intonation of some syllables changes to the first tone (︎rising ↗︎):",
+      "2_TONES": "Two syllables ↘︎↗︎ ↘︎↗︎ become  ︎↗︎︎ ↘︎↗︎ (e.g., nǐ hǎo 你好)",
+      "3_TONES": "Three syllables ↘︎↗︎ ↘︎↗︎ ↘︎↗︎ become ↘︎↗︎ ↗︎ ↘︎↗︎ (e.g., wǒ hěn hǎo 我很好)",
+      "4_TONES": "Four syllables ↘︎↗︎ ↘︎↗︎ ↘︎↗︎ ↘︎↗︎ become ↗︎ ↘︎↗︎ ↗︎ ↘︎↗︎ ",
+      "BU": "Additionally, when the negation word bù (不) precedes a syllable with a falling tone (↘︎), it changes its intonation to a rising tone (↗︎), pronounced bú. For example:",
+      "BU_EXAMPLE_1": "\"wǒ bù è le\" (I am not hungry.) changes to \"wǒ bú è le\"",
+      "BU_EXAMPLE_2": "\"wǒ bù lèi le\" (I am not tired.) to \"wǒ bú lèi le\""
+    }
+  },
+  "RADICAL_OVERVIEW": {
+    "TITLE": "Radicals (bùshǒu, 部首)",
+    "INTRO": "Chinese uses logographic characters known as hànzì (汉字). Each character represents a syllable and often corresponds to a word or part of a word. There are thousands of characters. Fortunately, they are based on a limited set of root elements, known as radicals (bùshǒu, 部首). Like a puzzle, radicals can be combined to a character. They often provide clues to the characters meanings or pronunciations.",
+    "OVERVIEW": "Browse through this overview of radicals to form a basic understanding. Select some to dive deeper into more complex characters, composed of these radicals.",
+    "HINT": "This display features simplified characters (jiǎntǐzì 简体字), which have been the official standard in China since 1950. By hovering over these characters, you can view the original traditional characters (fántǐzì 繁体字) or other writing variants, when available.",
+    "HINT2": "Some radicals are related to each other and appear in a long form and in a shorter form.",
+    "EXAMPLE_1.TITLE": "Water (125 shuǐ 水)",
+    "EXAMPLE_1.SUB": "This radical is associated with water-related concepts and appears in its shorter version (40 氵) in characters like 河 (hé, river) and 海 (hǎi, sea).",
+    "EXAMPLE_2.TITLE": "Person (23 rén 人)",
+    "EXAMPLE_2.SUB": "This radical indicates human-related concepts and appears in its shorter version (21 亻) in characters like 你 (nǐ, you) and 他 (tā, he).",
+    "EXAMPLE_3": "Tree (94 mù 木): This radical relates to trees and wood, found in characters like 林 (lín, forest) and 森 (sēn, woods).",
+    "SHOW_MORE": "Show more",
+    "SHOW_LESS": "Show less",
+    "OCCURENCES": "Occurences"
+  },
+  "VIEW": {
+    "GRID": "Grid view",
+    "SINGLE": "Single view"
+  },
+  "BUTTON": {
+    "GOTO_PINYIN_TONE": "Learn more about pinyin",
+    "GOTO_RADICALS": "Get started with the root elements"
+  },
+  "TOOLTIP": {
+    "COMPARE": "compare ",
+    "SHORT_FORM": "short form of",
+    "LONG_FORM": "long form of",
+    "ORIGINAL": "original sign",
+    "VARIANT": "writing variant",
+    "N_TH_HEAVEN": "{{n}}. Heavenly Stem",
+    "N_TH_EARTH": "{{n}}. Earthly Branch",
+    "N_TH_ELEMENT": "{{n}}. Element"
+  },
+  "SNACKBAR": {
+    "FIND_WORDS.MESSAGE": "Find chinese words composed of: {{radicals}}",
+    "FIND_WORDS.ACTION": "GO"
+  },
+  "SIDECAR": {
+    "TITLE": "Characters",
+    "CHARACTERS_FOUND": "{{amount}} characters were found for the radical: {{radicals}}"
+  },
+  "CHINESE_CALENDAR": {
+    "INTRODUCTION": "The traditional Chinese calendar is based on a 60-year cycle that combines the 10 heavenly stems and the 12 earthly branches.",
+    "HEAVEN.TITLE": "Heavenly Stems",
+    "HEAVEN.EXPLANATION": "The heavenly stems arise from the interplay of Yīn and Yáng ☯ with the five elements (mù 木 wood, huǒ 火 fire, tǔ 土 earth, jīn 金 metal and shuǐ 水 water), resulting in a total of 10 stems. Today, these stems serve as enumeration systems in various fields, including medicine, education, and sports leagues.",
+    "EARTH.TITLE": "Earthly Branches",
+    "EARTH.EXPLANATION": "The earthly branches are used to enumerate the animal signs in the Chinese zodiac, to represent the (double) hours of the day, and to mark the seasons of the year. They also serve as navigational references for seafarers and astronomers."
+  },
+  "PERSONAL_PRONOUNS": {
+    "TOPIC_TITLE": "Personal pronouns",
+    "I": "I",
+    "YOU": "you",
+    "HE": "he",
+    "SHE": "she",
+    "IT": "it",
+    "WE": "we",
+    "YOU_PL": "you",
+    "THEY": "they"
+  },
+  "QUESTION_WORDS": {
+    "TOPIC_TITLE": "Question words",
+    "WHAT": "What",
+    "WHICH": "Which",
+    "WHEN": "When",
+    "How": "How",
+    "WHY": "Why",
+    "BECAUSE": "because",
+    "QUESTION_PARTICLE": "Question particle for yes/no questions",
+    "WHERE": "Where",
+    "WHO": "Who",
+    "WHOM": "Whom"
+  },
+  "WEATHER": {
+    "TOPIC_TITLE": "Weather"
+  },
+  "NATURE": {
+    "TOPIC_TITLE": "Nature"
+  },
+  "FAMILY": {
+    "TOPIC_TITLE": "Family"
+  },
+  "DRINKS": {
+    "TOPIC_TITLE": "Drinks",
+    "COFFEE": "Coffee",
+    "BEER": "Beer"
+  },
+  "FRUITS": {
+    "TOPIC_TITLE": "Fruits",
+    "FRUIT": "Fruit",
+    "GRAPES": "Grapes",
+    "ORANGE": "Orange",
+    "LEMON": "Lemon",
+    "APPLE": "Apple",
+    "PEAR": "Pear",
+    "BANANA": "Banana",
+    "PEACH": "Peach",
+    "KIWI": "Kiwi",
+    "CHERRY": "Cherry",
+    "RASPBERRY": "Raspberry",
+    "STRAWBERRY": "Strawberry",
+    "BLUEBERRY": "Blueberry",
+    "COCONUT": "Coconut",
+    "PINEAPPLE": "Pineapple",
+    "MANGO": "Mango",
+    "WATERMELON": "Watermelon"
+  }
+}
+

@@ -1,0 +1,21 @@
+mat-toolbar {
+  justify-content: space-between;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: darkviolet;
+}
+
+img {
+  top: 5px;
+  max-height: 35px;
+}
+
+.title-link:hover {
+  cursor: pointer
+}
+
+button {
+  transform: translateY(5px);
+}

@@ -1,27 +1,35 @@
-# Caligraphy
+<h1>
+    <img style="width: 40px;" src=".github/images/favicon.ico">
+    Chinese Puzzle
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?color=blue)](./LICENSE)
 
-## Development server
+### Introduction
+Chinese Puzzle is an innovative platform designed for learning the Chinese language and exploring its complex characters. 
+The core components include:
+- Radicals Overview: A comprehensive guide to the root elements of Chinese characters, known as radicals.
+- Character Visualization: Engaging visuals that illustrate how characters are formed from these root elements.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Through the deconstruction of characters into root elements — a process known as chanzi — users can enhance their ability to recognize and memorize characters, significantly improving their learning experience. 
+Additionally, users can expand their vocabulary by browsing specific topic clusters or exploring radicals and their occurrences in various Chinese characters.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Features (WIP)
+- Internationalization: The platform is available in 🇺🇸 English and 🇩🇪 German.
+- Vocabulary: Access a collection of the 1,000 most common Chinese words.
+- Chanzi Analysis: Interactively explore Chinese characters and their compositions.
+- Search Functionality: Search for characters to discover their chanzi and occurrences in other characters.
+- Chanzi via Machine Learning: For characters not included in the platform's vocabulary, machine learning is utilized to deconstruct them into root elements.
 
-## Build
+Explore the Chinese Puzzle and embark on your journey to mastering the Chinese language!
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Local Setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The tool is deployed as a <a href='https://stephaniehhnbrg.github.io/chinese-caligraphy/' target='_blank'>Github Page</a>.
 
-## Running end-to-end tests
+But in case you would like to run the project locally, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Install dependencies: `npm install`
+- Start project: `npm run start`

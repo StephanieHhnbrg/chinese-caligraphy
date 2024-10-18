@@ -1,0 +1,84 @@
+.sidecar {
+  padding: 5px;
+  border-right: dimgrey 1px solid;
+  height: 99%;
+  overflow: hidden;
+}
+
+.close-icon {
+  float: right;
+  font-size: smaller;
+}
+
+.close-icon:hover {
+  cursor: pointer;
+  color: dimgrey;
+}
+
+.word {
+  padding-bottom: 15px;
+}
+
+.character {
+  display: inline-block;
+  flex-direction: column;
+}
+
+.hanzi {
+  border-radius: 10px;
+  border: 1px solid dimgrey;
+  width: auto;
+  padding: 3px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.emoji {
+  display: none;
+}
+
+.hanzi:hover .emoji {
+  display: block;
+}
+
+.pinyin {
+  font-size: xx-small;
+  text-align: center;
+  padding: 3px;
+  white-space: nowrap;
+}
+
+.composition {
+  font-size: xx-small;
+}
+
+.compositions {
+  flex-wrap: wrap;
+}
+
+.radical {
+  margin: 3px;
+  padding: 3px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.radical:hover{
+  background-color: white;
+  color: black;
+  border: 1px solid dimgrey;
+}
+
+.highlighted {
+  background-color: blue;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.plus {
+  margin: 3px;
+  padding: 3px;
+  height: 20px;
+}

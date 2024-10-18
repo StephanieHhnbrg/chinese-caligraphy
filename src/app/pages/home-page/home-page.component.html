@@ -1,0 +1,33 @@
+<div class="home">
+  <div class="left">
+    <img class="dark-img" src="../../../assets/img/home_dark.jpg">
+    <img class="light-img" src="../../../assets/img/home_light.jpg">
+  </div>
+  <div class="right">
+    <h3>{{"HOME.TITLE" | translate }}</h3>
+    <p>{{"HOME.INTRODUCTION" | translate }}</p>
+    <p>{{"HOME.SUBTITLE" | translate }}</p>
+
+    <div class="column">
+      <div class="button-col">
+        <button mat-flat-button (click)="scrollToElement('pinyin-tone-explanation')">
+          <mat-icon aria-hidden="false" fontIcon="chevron_right"></mat-icon>
+          {{"BUTTON.GOTO_PINYIN_TONE" | translate}}
+        </button>
+
+        <button mat-flat-button (click)="scrollToElement('radical-overview')">
+          <mat-icon aria-hidden="false" fontIcon="chevron_right"></mat-icon>
+          {{"BUTTON.GOTO_RADICALS" | translate}}
+        </button>
+      </div>
+
+
+      <div class='bottom'>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<span id="home-bottom"></span>
+

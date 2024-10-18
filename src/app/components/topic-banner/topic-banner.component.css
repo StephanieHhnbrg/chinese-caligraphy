@@ -1,0 +1,32 @@
+
+.topic-banner {
+  padding-bottom: 10px;
+}
+
+.topic-banner:hover .scroll {
+  animation-play-state: paused;
+}
+
+
+.topic-banner .scroll {
+  will-change: transform;
+}
+
+.reverse .scroll {
+  animation-direction: reverse;
+}
+
+.overlay {
+  transform: translateX(-100%);
+}
+
+
+@keyframes loop {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-100%);}
+}
+
+
+button {
+  margin: 10px;
+}

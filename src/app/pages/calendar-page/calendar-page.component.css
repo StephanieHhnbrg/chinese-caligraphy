@@ -1,0 +1,13 @@
+.calendar-background-image {
+  background-image: url("../../../assets/img/sky_earth.jpg");
+  background-size:100% 100%;
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+}
+
+.frame {
+  background-color: rgba(1, 1, 1, .5);
+  color: white;
+  border: 0;
+}

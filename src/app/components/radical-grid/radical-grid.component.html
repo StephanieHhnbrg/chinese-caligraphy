@@ -1,0 +1,23 @@
+<div class="grid">
+  <div *ngFor="let r of radicals" class="radical-container">
+    <div class="grey-box mat-elevation-z8"
+         [id]="'radical-'+r.sign"
+         [ngClass]="{'selected-radical': isRadicalSelected(r)}"
+         [matTooltip]="getTooltip(r)" matTooltipPosition="above"
+         matTooltipClass="radical-tooltip"
+         (click)="toggleRadical(r)">
+      <span class="emoji">{{r.emoji}}</span>
+      {{r.sign}}
+    </div>
+    <span>
+          <small>#<span *ngIf="r.index<10">0</span><span *ngIf="r.index<100">0</span>{{r.index}} {{r.pinyin}}</small><br />
+      {{r.translationKey}}
+        </span>
+  </div>
+  <div class="tile-button grey-box" *ngIf="radicals.length <= radicalDisplayTreshold" (click)="showAllRadicals()">
+    + {{"RADICAL_OVERVIEW.SHOW_MORE" | translate}}
+  </div>
+  <div class="tile-button grey-box" *ngIf="radicals.length > radicalDisplayTreshold" (click)="showFirstNRadicals()">
+    - {{"RADICAL_OVERVIEW.SHOW_LESS" | translate}}
+  </div>
+</div>

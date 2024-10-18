@@ -1,0 +1,35 @@
+<div>
+  <div class="topic-banner">
+    <div class='scroll row'>
+      <div *ngFor="let topic of topics">
+        <button mat-stroked-button>
+          {{topic+".TOPIC_TITLE" | translate }}
+        </button>
+      </div>
+    </div>
+    <div aria-hidden class='scroll row overlay'>
+      <div *ngFor="let topic of topics">
+        <button mat-stroked-button>
+          {{topic+".TOPIC_TITLE" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-banner reverse">
+    <div class='scroll row'>
+      <div *ngFor="let topic of topics">
+        <button mat-stroked-button>
+          {{topic+".TOPIC_TITLE" | translate }}
+        </button>
+      </div>
+    </div>
+    <div aria-hidden class='scroll row overlay'>
+      <div *ngFor="let topic of topics">
+        <button mat-stroked-button>
+          {{topic+".TOPIC_TITLE" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

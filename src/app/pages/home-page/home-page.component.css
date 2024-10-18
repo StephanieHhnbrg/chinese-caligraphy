@@ -1,0 +1,48 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  height: 100vh;
+}
+
+.left {
+  width: 480px;
+  z-index: 10;
+}
+
+.right {
+  padding-top: 10vh;
+  height: 100vh;
+}
+
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button-col {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+.column button {
+  margin: 10px;
+  justify-content: flex-start;
+}
+
+app-topic-banner {
+  z-index: 1;
+}
+
+.bottom {
+  align-self: flex-end;
+}

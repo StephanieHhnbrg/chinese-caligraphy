@@ -1,0 +1,44 @@
+<div id="radical-overview-top">&nbsp;</div>
+<mat-drawer-container class="mat-container">
+  <mat-drawer #drawer id="drawer" mode="side" class="mat-container">
+    <app-characters-by-radicals-sidecar (closeIconClicked)="drawer.close()"></app-characters-by-radicals-sidecar>
+  </mat-drawer>
+  <div id="radical-overview" [ngClass]="{'reduced-width-72': drawer.opened}">
+    <div [ngClass]="{'reduced-width-70': drawer.opened}">
+      <h1>{{"RADICAL_OVERVIEW.TITLE" | translate }}</h1>
+      <p>{{"RADICAL_OVERVIEW.INTRO" | translate}}</p>
+      <p>{{"RADICAL_OVERVIEW.OVERVIEW" | translate}}</p>
+
+      <mat-button-toggle-group [value]="view" [hideSingleSelectionIndicator]="true">
+        <mat-button-toggle value="single" (change)="changeView('single')"><mat-icon>view_carousel</mat-icon> {{"VIEW.SINGLE" | translate }}</mat-button-toggle>
+        <mat-button-toggle value="grid" (change)="changeView('grid')"><mat-icon>grid_on</mat-icon> {{"VIEW.GRID" | translate }}</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <app-radical-grid *ngIf="view == 'grid'" (radicalSelected)="drawer.open()"></app-radical-grid>
+    <app-radical-carousel *ngIf="view == 'single'" [ngClass]="{'reduced-width-70': drawer.opened}"></app-radical-carousel>
+  </div>
+
+  <div [ngClass]="{'reduced-width-70': drawer.opened}">
+    <div class="row" style="margin: 25px;">
+      <mat-icon aria-hidden="false" fontIcon="info" style="width: 50px;"></mat-icon>
+      <small>{{"RADICAL_OVERVIEW.HINT" | translate}}</small>
+    </div>
+
+    <div class="frame">
+      <p>{{"RADICAL_OVERVIEW.HINT2" | translate}}</p>
+
+      <div class="row">
+        <span class="example-left">{{"RADICAL_OVERVIEW.EXAMPLE_1.TITLE" | translate}}</span>
+        <small>{{"RADICAL_OVERVIEW.EXAMPLE_1.SUB" | translate}}</small>
+      </div>
+
+      <div class="row">
+        <span class="example-left">{{"RADICAL_OVERVIEW.EXAMPLE_2.TITLE" | translate}}</span>
+        <small>{{"RADICAL_OVERVIEW.EXAMPLE_2.SUB" | translate}}</small>
+      </div>
+    </div>
+
+  </div>
+</mat-drawer-container>
+
+

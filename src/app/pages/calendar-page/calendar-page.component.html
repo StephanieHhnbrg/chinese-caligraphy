@@ -1,0 +1,23 @@
+<div class="calendar-background-image">
+  <p>&nbsp;</p>
+  <div class="frame introduction">
+    <p>{{"CHINESE_CALENDAR.INTRODUCTION" | translate}}</p>
+    <p>{{"CHINESE_CALENDAR.HEAVEN.EXPLANATION" | translate}}</p>
+    <p>{{"CHINESE_CALENDAR.EARTH.EXPLANATION" | translate}}</p>
+  </div>
+  <div class="row">
+    <div class="frame heaven-signs">
+      <h6>{{"CHINESE_CALENDAR.HEAVEN.TITLE" | translate}}</h6>
+      <ol>
+        <li *ngFor="let sign of heavenSigns">{{sign.sign}} {{sign.pinyin}} element: {{sign.phase}}</li>
+      </ol>
+    </div>
+
+    <div class="frame earth-signs">
+      <h6>{{"CHINESE_CALENDAR.EARTH.TITLE" | translate}}</h6>
+      <ol>
+        <li *ngFor="let sign of earthSigns">{{sign.sign}} {{sign.pinyin}} animal: {{sign.animal}}</li>
+      </ol>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.radical-container, .tile-button {
+  margin: 10px;
+  width: 150px;
+}
+
+.grey-box {
+  background-color: dimgrey;
+  color: white;
+  height: 100px;
+  width: 150px;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  display:table-cell;
+  vertical-align: middle;
+  font-size: xx-large;
+}
+
+.radical-container > .grey-box:hover {
+  background-color: darkorchid;
+  font-size: xxx-large;
+  cursor: pointer;
+}
+
+.emoji {
+  display: none;
+}
+
+::ng-deep .radical-tooltip  {
+  white-space: pre-line;
+  text-align: left !important;
+}
+
+.radical-container > .grey-box:hover .emoji {
+  display: block;
+}
+
+.tile-button {
+  font-size: medium;
+}
+
+.tile-button:hover {
+  background-color: darkslategray;
+  cursor: pointer;
+}
+
+.selected-radical {
+  background-color: blue;
+}

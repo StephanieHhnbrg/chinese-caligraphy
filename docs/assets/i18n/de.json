@@ -1,0 +1,12 @@
+{
+  "TOOLTIP": {
+    "COMPARE": "vgl. ",
+    "SHORT_FORM": "Kurzform von",
+    "LONG_FORM": "Langform von",
+    "ORIGINAL": "Langzeichen",
+    "VARIANT": "Schreibvariante",
+    "N_TH_HEAVEN": "{{n}}. Himmelsstamm",
+    "N_TH_EARTH": "{{n}}. Erdzweig",
+    "N_TH_ELEMENT": "{{n}}. Element"
+  }
+}

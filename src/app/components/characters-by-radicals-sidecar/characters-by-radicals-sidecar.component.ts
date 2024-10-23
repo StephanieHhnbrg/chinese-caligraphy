@@ -48,7 +48,6 @@ export class CharactersByRadicalsSidecarComponent implements OnInit, OnDestroy {
         result.push(c);
       } else {
        result = result.concat(this.characterService.getComposition(c));
-        console.log(c + " result"+ result);
       }
     });
     return result;

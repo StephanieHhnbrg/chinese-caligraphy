@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {WORDS} from "../../data/words";
 
 @Component({
   selector: 'app-home-page',
@@ -15,8 +14,6 @@ export class HomePageComponent {
     }
   }
 
-  constructor() {
-    console.log("words:"+ WORDS.length);
-  }
+  constructor() {}
 
 }

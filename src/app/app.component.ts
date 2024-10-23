@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
-import {CharacterService} from "./services/character.service";
+
 
 @Component({
   selector: 'app-root',

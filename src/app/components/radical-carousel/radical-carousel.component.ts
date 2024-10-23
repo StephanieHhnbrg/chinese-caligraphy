@@ -48,7 +48,6 @@ export class RadicalCarouselComponent implements OnInit, OnDestroy {
   }
 
   getRadicalsOccurences(radical: Radical): Word[] {
-    console.log(this.characterService.getOccurencesOfSign(radical.sign));
     return this.characterService.getOccurencesOfSign(radical.sign);
   }
 

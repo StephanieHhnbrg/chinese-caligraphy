@@ -88,7 +88,7 @@ export class CharacterService {
           this.addChildParentRelationship(grandChildren, parentWord);
         }
       } else {
-        console.log('Character not defined: '+c);
+        console.log(`Character not defined: ${c} within ${parentWord}`);
       }
     });
   }

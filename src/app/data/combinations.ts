@@ -9,7 +9,7 @@ export const COMBINATIONS: Word[] = [
   { translationKey: "older sister", hanzi: '姐', pinyin: 'jiě', composition: [['女', '目']], type: [WORD_TYPE.NOUN]},
   { translationKey: "plural suffix for persons", hanzi: '们', pinyin: 'men', composition: [['亻', '门']], type: [WORD_TYPE.PRONOUN]},
   { translationKey: "too", hanzi: '也', pinyin: 'yě', composition: [['丨', '乙']], type: [WORD_TYPE.ADVERB]},
-  { translationKey: "pavilion, shop, house", hanzi: '馆', pinyin: 'guǎn', composition: [['饣', '宀', '']], type: [WORD_TYPE.NOUN]},
+  { translationKey: "pavilion, shop, house", hanzi: '馆', pinyin: 'guǎn', composition: [['饣', '宀', '丨','コ','コ']], type: [WORD_TYPE.NOUN]},
   { translationKey: "clothes, dress", hanzi: '服', pinyin: 'fú', composition: [['月', '卩', '又']], type: [WORD_TYPE.NOUN]},
   { translationKey: "morning, early", hanzi: '早', pinyin: 'zǎo', composition: [['日', '十']], type: [WORD_TYPE.NOUN, WORD_TYPE.ADJECTIVE]},
   { translationKey: "night, late", hanzi: '晚', pinyin: 'wǎn', composition: [['日', '刀', '口', '丨', '儿', '丶']], type: [WORD_TYPE.NOUN, WORD_TYPE.ADJECTIVE]},
@@ -19,11 +19,12 @@ export const COMBINATIONS: Word[] = [
   { translationKey: "think, consider", hanzi: '思', pinyin: 'si', composition: [['田','心']], type: [WORD_TYPE.VERB]},
   { translationKey: "right, correct, yes", hanzi: '对', pinyin: 'duì', composition: [['又', '寸']], type: [WORD_TYPE.ADJECTIVE, WORD_TYPE.PHRASE]},
   { translationKey: "start, rise, begin", hanzi: '起', pinyin: 'qǐ', composition: [['走','己']], type: [WORD_TYPE.VERB]},
-  { translationKey: "(have) not, without", hanzi: '没', pinyin: 'méi', composition: [['氵','殳']], type: [WORD_TYPE.ADVERB]},
   { translationKey: "calculate, count", hanzi: '算', pinyin: 'suàn', composition: [['⺮', '目', '廾']], type: [WORD_TYPE.VERB]},
   { translationKey: "between, amoung", hanzi: '间', pinyin: 'jiān', composition: [['门', '日']], type: [WORD_TYPE.ADVERB]},
   { translationKey: "", hanzi: '巴', pinyin: 'bā', composition: [['巳','丨']], type: [WORD_TYPE.COMB_EL]},
   { translationKey: "", hanzi: '么', pinyin: 'me', composition: [['丿','厶']], type: [WORD_TYPE.COMB_EL]},
   { translationKey: "", hanzi: '勿', pinyin: 'wù', composition: [['乙','丿','丿']], type: [WORD_TYPE.COMB_EL]},
-
+  { translationKey: "cloud, scaling", hanzi: '云', pinyin: 'yún', composition: [['二','厶']], type: [WORD_TYPE.NOUN, WORD_TYPE.ADJECTIVE]},
+  { translationKey: "so, therefore, only", hanzi: '乃', pinyin: 'nǎi', composition: [['丿','乛','𠃌']], type: [WORD_TYPE.ADVERB]},
+  { translationKey: "", hanzi: '市', pinyin: 'shì', composition: [['十','冂']], type: [WORD_TYPE.COMB_EL]},
 ];

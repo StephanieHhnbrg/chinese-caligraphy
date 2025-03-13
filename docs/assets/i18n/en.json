@@ -1,13 +1,30 @@
 {
   "HOME": {
-    "TITLE": "Welcome! 欢迎 (Huānyíng)",
-    "INTRODUCTION": "to the enchanting realm of Chinese characters.",
-    "SUBTITLE": "Embrace the challenge and beauty of learning Chinese and explore its creativity"
+    "TITLE": "Welcome",
+    "TITLE_CHINESE": "欢迎 (Huānyíng)",
+    "SUBTITLE": "to the enchanting realm of Chinese characters. Embrace the challenge and beauty of learning Chinese and explore its creativity.",
+    "DISCOVER": "Discover"
+  },
+  "NAV": {
+    "SIDECAR.TITLE": "Menu",
+    "SIDECAR.OPEN_TOOLTIP": "Open Menu",
+    "PINYIN_TONES": "Pinyin & Tones",
+    "RADICAL_DECK": "Radical Deck",
+    "HANZI_SEARCH": "Hanzi Search",
+    "CALIGRAPHY_GARDEN": "Caligraphy Garden"
   },
   "TOOLBAR.TITLE": "Chinese Puzzle",
+  "INFO_MODAL": {
+    "DESC": "Chinese Puzzle is an interactive platform designed for learning the Chinese language and exploring its complex characters. \n Memorize characters by understanding their root elements with the help of the Radical Deck and the Hanzi Search Function. Get to know new words in the Caligraphy Garden and learn more about pinyin and tonation. \n",
+    "GITHUB": "The code is publicly available on"
+  },
   "LANGUAGE": {
     "EN": "English",
     "DE": "German"
+  },
+  "CALIGRAPHY_GARDEN": {
+    "TITLE": "Caligraphy Garden",
+    "SUBTITLE": "Hover and click on the characters to learn more about their compositions and meaning."
   },
   "PINYIN": {
     "TITLE": "Pinyin (拼音)",
@@ -46,7 +63,11 @@
     "EXAMPLE_3": "Tree (94 mù 木): This radical relates to trees and wood, found in characters like 林 (lín, forest) and 森 (sēn, woods).",
     "SHOW_MORE": "Show more",
     "SHOW_LESS": "Show less",
-    "OCCURENCES": "Occurences"
+    "OCCURENCES": "Occurences",
+    "SORT":  {
+      "INDEX": "Sort by index",
+      "OCCURENCE": "Sort by occurence"
+    }
   },
   "VIEW": {
     "GRID": "Grid view",
@@ -54,7 +75,11 @@
   },
   "BUTTON": {
     "GOTO_PINYIN_TONE": "Learn more about pinyin",
-    "GOTO_RADICALS": "Get started with the root elements"
+    "GOTO_RADICALS": "Get started with the root elements",
+    "LEARN_MORE_ABOUT_RADICAL": "Learn more about radicals",
+    "SEARCH_HANZI": "Search hanzi composition",
+    "TOOLTIP.EXPL_EXPAND": "Expand character explaination",
+    "TOOLTIP.EXPL_MINIMIZE": "Minimize character explaination"
   },
   "TOOLTIP": {
     "COMPARE": "compare ",
@@ -80,64 +105,6 @@
     "HEAVEN.EXPLANATION": "The heavenly stems arise from the interplay of Yīn and Yáng ☯ with the five elements (mù 木 wood, huǒ 火 fire, tǔ 土 earth, jīn 金 metal and shuǐ 水 water), resulting in a total of 10 stems. Today, these stems serve as enumeration systems in various fields, including medicine, education, and sports leagues.",
     "EARTH.TITLE": "Earthly Branches",
     "EARTH.EXPLANATION": "The earthly branches are used to enumerate the animal signs in the Chinese zodiac, to represent the (double) hours of the day, and to mark the seasons of the year. They also serve as navigational references for seafarers and astronomers."
-  },
-  "PERSONAL_PRONOUNS": {
-    "TOPIC_TITLE": "Personal pronouns",
-    "I": "I",
-    "YOU": "you",
-    "HE": "he",
-    "SHE": "she",
-    "IT": "it",
-    "WE": "we",
-    "YOU_PL": "you",
-    "THEY": "they"
-  },
-  "QUESTION_WORDS": {
-    "TOPIC_TITLE": "Question words",
-    "WHAT": "What",
-    "WHICH": "Which",
-    "WHEN": "When",
-    "How": "How",
-    "WHY": "Why",
-    "BECAUSE": "because",
-    "QUESTION_PARTICLE": "Question particle for yes/no questions",
-    "WHERE": "Where",
-    "WHO": "Who",
-    "WHOM": "Whom"
-  },
-  "WEATHER": {
-    "TOPIC_TITLE": "Weather"
-  },
-  "NATURE": {
-    "TOPIC_TITLE": "Nature"
-  },
-  "FAMILY": {
-    "TOPIC_TITLE": "Family"
-  },
-  "DRINKS": {
-    "TOPIC_TITLE": "Drinks",
-    "COFFEE": "Coffee",
-    "BEER": "Beer"
-  },
-  "FRUITS": {
-    "TOPIC_TITLE": "Fruits",
-    "FRUIT": "Fruit",
-    "GRAPES": "Grapes",
-    "ORANGE": "Orange",
-    "LEMON": "Lemon",
-    "APPLE": "Apple",
-    "PEAR": "Pear",
-    "BANANA": "Banana",
-    "PEACH": "Peach",
-    "KIWI": "Kiwi",
-    "CHERRY": "Cherry",
-    "RASPBERRY": "Raspberry",
-    "STRAWBERRY": "Strawberry",
-    "BLUEBERRY": "Blueberry",
-    "COCONUT": "Coconut",
-    "PINEAPPLE": "Pineapple",
-    "MANGO": "Mango",
-    "WATERMELON": "Watermelon"
   }
 }
 

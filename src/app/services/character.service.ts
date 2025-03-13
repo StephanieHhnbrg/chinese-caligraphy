@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import {RADICALS} from "../data/radicals";
 import {COMBINATIONS} from "../data/combinations";
 import {WORDS} from "../data/words";
 import {Radical} from "../interfaces/radical.data";
 import {Word} from "../interfaces/word.data";
+import * as XLSX from 'xlsx';
+import {HttpClient} from "@angular/common/http";
+import {Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,25 +13,65 @@ import {Word} from "../interfaces/word.data";
 export class CharacterService {
 
 
+  private radicalsAreLoaded$ = new Subject<boolean>();
+  private charactersAreLoaded$ = new Subject<boolean>();
+  private radicals : Radical[] = [];
   private radicalMap = new Map<string, Radical>();
   private characterMap = new Map<string, {c: Word | Radical, usedIn : string[]}>();
-  constructor() {
-    this.initCharacterMap();
-    this.initCharacterRelationships();
+  constructor(private http: HttpClient) {
+    this.importRadicalsFromXlsx().subscribe(() => {
+      // TODO: loading screen
+      this.radicalsAreLoaded$.next(true);
+      this.initCharacterMap();
+      this.initCharacterRelationships();
+      this.charactersAreLoaded$.next(true);
+    });
+  }
+
+  public getRadicalsAreLoadedObservable(): Observable<boolean> {
+    return this.radicalsAreLoaded$.asObservable();
+  }
+
+  public getCharactersAreLoadedObservable(): Observable<boolean> {
+    return this.charactersAreLoaded$.asObservable();
+  }
+
+
+  private importRadicalsFromXlsx(): Observable<boolean> {
+    let finished$ = new Subject<boolean>();
+    this.http.get('assets/radicals.xlsx', { responseType: 'blob' })
+      .subscribe((data: any) => {
+        const reader: FileReader = new FileReader();
+        reader.onload = (e: any) => {
+          const wb: XLSX.WorkBook = XLSX.read(e.target.result, {type: 'binary'});
+          const ws: XLSX.WorkSheet = wb.Sheets[wb.SheetNames[0]];
+          this.radicals = <Radical[]>(XLSX.utils.sheet_to_json(ws, {header: 0}));
+          finished$.next(true);
+        };
+        reader.readAsBinaryString(data);
+      });
+    return finished$.asObservable();
   }
 
   private initCharacterMap() {
-    RADICALS.forEach(r => {
+    this.radicals.forEach(r => {
       this.characterMap.set(r.sign, {c: r, usedIn: []});
       this.radicalMap.set(r.sign, r);
     });
 
+    let countRefactors = 0;
     let characters: string[] = [];
     let duplicated: string[] = [];
     COMBINATIONS.concat(WORDS).forEach(word => {
       if (this.characterMap.has(word.hanzi)) {
         console.log(`Word already defined: ${word.hanzi} - Please remove.`);
       }
+
+      if (word.hanzi.length > 1 && word.composition.toString().replaceAll(',','').length > word.hanzi.length) {
+        console.log("Character can be extracted out of the word: "+word.hanzi);
+        countRefactors++;
+      }
+
       this.characterMap.set(word.hanzi, {c: word, usedIn: []})
 
       if (word.hanzi.length > 0) {
@@ -48,6 +90,8 @@ export class CharacterService {
         }
       }
     });
+
+    console.log(countRefactors + " words to be refactored");
 
     console.log((COMBINATIONS.length+WORDS.length) + " words defined");
     console.log(characters.length + " characters defined");
@@ -119,9 +163,12 @@ export class CharacterService {
     return this.radicalMap.get(sign);
   }
 
+  public getRadicals(): Radical[] {
+    return [...this.radicals];
+  }
   public getRandomRadical(): Radical {
-    let randomIndex = Math.floor(Math.random() * RADICALS.length);
-    return RADICALS.at(randomIndex)!;
+    let randomIndex = Math.floor(Math.random() * this.radicals.length);
+    return this.radicals.at(randomIndex)!;
   }
 
   public getWord(comb: string): Word | undefined {

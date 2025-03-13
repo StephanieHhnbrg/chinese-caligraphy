@@ -3,44 +3,7 @@
     <mat-icon>chevron_left</mat-icon>
   </button>
 
-  <div class="frame">
-    <div class="row">
-      <span class="index-title">#<span *ngIf="radicals[displayedRadicalIndex].index<10">0</span><span *ngIf="radicals[displayedRadicalIndex].index<100">0</span>{{radicals[displayedRadicalIndex].index}}</span>
-      <h5>&nbsp;&nbsp;&nbsp;{{radicals[displayedRadicalIndex].pinyin}}</h5>
-    </div>
-
-    <div class="row">
-      <div class="grey-box-parent">
-        <div class="grey-box mat-elevation-z8">
-          <span class="emoji">{{radicals[displayedRadicalIndex].emoji}}</span>
-          {{radicals[displayedRadicalIndex].sign}}
-        </div>
-      </div>
-
-      <div class="radical-desc">
-        <span>{{radicals[displayedRadicalIndex].translationKey}}<br /></span>
-        <small *ngIf="radicals[displayedRadicalIndex].tooltip">{{getInstantedTooltip(radicals[displayedRadicalIndex].tooltip!)}}<br /></small>
-        <small *ngIf="radicals[displayedRadicalIndex].compare">{{"TOOLTIP.COMPARE" | translate}} {{radicals[displayedRadicalIndex].compare}}<br /></small>
-        <small *ngIf="radicals[displayedRadicalIndex].long">{{"TOOLTIP.SHORT_FORM" | translate}} {{radicals[displayedRadicalIndex].long}}<br /></small>
-        <small *ngIf="radicals[displayedRadicalIndex].short">{{"TOOLTIP.LONG_FORM" | translate}} {{radicals[displayedRadicalIndex].short}}<br /></small>
-        <small *ngIf="radicals[displayedRadicalIndex].original">{{"TOOLTIP.ORIGINAL" | translate}}: {{radicals[displayedRadicalIndex].original}}<br /></small>
-        <small *ngIf="radicals[displayedRadicalIndex].variant">{{"TOOLTIP.VARIANT" | translate}}: {{radicals[displayedRadicalIndex].variant}}<br /></small>
-      </div>
-    </div>
-
-    <p>{{"RADICAL_OVERVIEW.OCCURENCES" | translate }} ({{getRadicalsOccurences(radicals[displayedRadicalIndex]).length}})</p>
-
-    <div class="row occurences">
-      <div class="character" *ngFor="let c of getRadicalsOccurences(radicals[displayedRadicalIndex])">
-        <div class="hanzi mat-elevation-z4">
-          {{c.hanzi}}
-          <div class="pinyin">
-            {{c.pinyin}} ({{ c.translationKey | translate }})
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-radical-info-frame [radical]="radicals[displayedRadicalIndex]"></app-radical-info-frame>
 
   <button mat-icon-button (click)="next()">
     <mat-icon>chevron_right</mat-icon>

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -9,9 +9,8 @@ import {CharacterService} from "../../services/character.service";
   templateUrl: './radical-overview.component.html',
   styleUrl: './radical-overview.component.css'
 })
-export class RadicalOverviewComponent implements OnInit, AfterViewInit, OnDestroy {
+export class RadicalOverviewComponent implements OnInit, OnDestroy {
   view: 'single' | 'grid' = 'grid';
-  @ViewChild('drawer') characterSidecar: any;
   private subscriptions: Subscription[] = [];
   constructor(private translate: TranslateService,
               private route: ActivatedRoute,
@@ -34,27 +33,30 @@ export class RadicalOverviewComponent implements OnInit, AfterViewInit, OnDestro
       }));
   }
 
-  public ngAfterViewInit() { // FIXME ExpressionChangedAfterItHasBeenCheckedError
-    this.subscriptions.push(this.route.queryParams
-      .subscribe(params => {
-        if (params['radicals']) {
-          if (this.characterSidecar) {
-            this.characterSidecar.open();
-          }
-        }
-      }));
-  }
 
   public changeView(view: 'single' | 'grid') {
     this.view = view;
     let radicals = this.route.snapshot.queryParams['radicals'];
+    let sort = this.route.snapshot.queryParams['sort'];
     if (!radicals && view == 'single') {
       radicals = this.characterService.getRandomRadical().sign;
     }
     this.router.navigate(
-      ['/'],
-      { queryParams: { radicals, view }}
+      ['/radical-deck'],
+      { queryParams: { radicals, view, sort }}
     );
+  }
+
+  public switchSortingCriteria(sort: 'index' | 'occurence') {
+    let radicals = this.route.snapshot.queryParams['radicals'];
+    let view = this.route.snapshot.queryParams['view'];
+    let prevSort = this.route.snapshot.queryParams['sort'];
+    if ((prevSort && prevSort != sort) || (!prevSort && sort != 'index')) {
+      this.router.navigate(
+        ['/radical-deck'],
+        {queryParams: {radicals, view, sort}}
+      );
+    }
   }
 
   public ngOnDestroy() {

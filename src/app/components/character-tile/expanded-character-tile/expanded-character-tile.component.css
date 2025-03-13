@@ -1,0 +1,28 @@
+.frame {
+  min-width: 60px;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+
+.subline {
+  font-size: xx-small;
+}
+
+.emoji {
+  display: none;
+}
+
+.sign:hover .emoji {
+  display: block;
+}
+
+.composition {
+  display: none;
+  transform: scale(0.5);
+}
+
+.tile:hover .composition {
+  display: block;
+}

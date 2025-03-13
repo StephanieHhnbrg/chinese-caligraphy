@@ -1,0 +1,7 @@
+.compositions .frame {
+  min-width: 60px;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 15px;
+}

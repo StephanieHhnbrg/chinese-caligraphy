@@ -6,7 +6,7 @@
 
 .radical-container, .tile-button {
   margin: 10px;
-  width: 150px;
+  width: 145px;
 }
 
 .grey-box {
@@ -23,7 +23,7 @@
 }
 
 .radical-container > .grey-box:hover {
-  background-color: darkorchid;
+  background-color: darkred;
   font-size: xxx-large;
   cursor: pointer;
 }
@@ -48,8 +48,4 @@
 .tile-button:hover {
   background-color: darkslategray;
   cursor: pointer;
-}
-
-.selected-radical {
-  background-color: blue;
 }

@@ -1,0 +1,24 @@
+<mat-drawer-container class="sidecar-container" autosize>
+  <mat-drawer #sideMenu id="sideMenu" mode="side">
+    <div class="sidecar mat-elevation-z8">
+      <mat-icon class="close-icon" (click)="sideMenu.close()">chevron_left</mat-icon>
+      <h6 (click)="switchPage('/')">{{"NAV.SIDECAR.TITLE" | translate}}</h6>
+
+      <div *ngFor="let item of menuItems" class="menu-item" (click)="switchPage(item.url)">
+        <mat-icon aria-hidden="false" fontIcon="chevron_right"></mat-icon>
+        <span>{{item.translationKey | translate}}</span>
+      </div>
+
+    </div>
+  </mat-drawer>
+
+  <button *ngIf="!sideMenu.opened"
+          (click)="sideMenu.open()"
+          class="open-button"
+          matTooltip="{{'NAV.SIDECAR.OPEN_TOOLTIP' | translate}}"
+          mat-icon-button aria-label="Open Menu">
+    <mat-icon aria-hidden="false" fontIcon="chevron_right"></mat-icon>
+  </button>
+
+</mat-drawer-container>
+

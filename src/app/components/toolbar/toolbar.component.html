@@ -1,5 +1,5 @@
-<mat-toolbar color="primary" class="mat-elevation-z8">
-  <div class="title-link" routerLink="">
+<mat-toolbar class="mat-elevation-z8">
+  <div class="title-link" (click)="goHome()">
     <img src="./favicon.ico">
     &nbsp;
     <span>{{"TOOLBAR.TITLE" | translate}}</span>
@@ -8,7 +8,7 @@
   <div class="right">
     <app-color-slide-toggle></app-color-slide-toggle>
 
-    <button mat-icon-button aria-label="About Page">
+    <button mat-icon-button aria-label="About Page" (click)="openInfoModal()">
       <mat-icon aria-hidden="false" fontIcon="info"></mat-icon>
     </button>
     <button mat-icon-button aria-label="Language Settings" [matMenuTriggerFor]="language_menu">

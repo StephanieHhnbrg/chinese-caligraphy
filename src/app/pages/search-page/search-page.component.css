@@ -1,0 +1,23 @@
+#word-page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 25px;
+}
+
+.row button {
+  align-self: center;
+}
+
+button {
+  max-width: 350px;
+}
+
+/deep/ #word-page app-radical-info-frame .occurences {
+  height: 150px
+}
+
+.sentiment-icon {
+  transform: translateY(10px);
+  font-size: 20px;
+}

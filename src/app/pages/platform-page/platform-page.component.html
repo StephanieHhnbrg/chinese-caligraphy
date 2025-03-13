@@ -1,0 +1,53 @@
+<div class="page">
+  <div class="title column">
+    <p>
+      <span class="page-title">{{"HOME.TITLE" | translate}}&nbsp;&nbsp;</span>
+      <span>{{"HOME.TITLE_CHINESE" | translate}}</span>
+    </p>
+    <p>{{"HOME.SUBTITLE" | translate}}</p>
+    <p>&nbsp;</p>
+    <p>{{"HOME.DISCOVER" | translate | uppercase }}</p>
+  </div>
+
+  <div class="row router-row">
+    <div class="column" (click)="switchPage('pinyin-tone')"
+         (mouseenter)="vidTile1.play()"
+         (mouseleave)="vidTile1.pause()"
+    >
+      <video class="tile mat-elevation-z8" width="250" height="150" #vidTile1>
+        <source src="../../../assets/img/pinyin-tone.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>{{"NAV.PINYIN_TONES" | translate}}</p>
+    </div>
+
+    <div class="column" (click)="switchPage('radical-deck')"
+         (mouseenter)="vidTile2.play()"
+         (mouseleave)="vidTile2.pause()"
+    >
+      <video class="tile mat-elevation-z8" width="250" height="150" #vidTile2>
+        <source src="../../../assets/img/radical-deck-5r.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>{{"NAV.RADICAL_DECK" | translate}}</p>
+    </div>
+
+    <div class="column" (click)="switchPage('hanzi-search')"
+         (mouseenter)="vidTile3.play()"
+         (mouseleave)="vidTile3.pause()">
+      <video class="tile mat-elevation-z8" width="250" height="150" autoplay #vidTile3>
+        <source src="../../../assets/img/hanzi-search.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>{{"NAV.HANZI_SEARCH" | translate}}</p>
+    </div>
+  </div>
+
+  <div class="caligraphy-garden mat-elevation-z8" (click)="switchPage('caligraphy-garden')">
+    <div class="title">
+      <p>{{"NAV.CALIGRAPHY_GARDEN" | translate}}</p>
+    </div>
+
+  </div>
+</div>
+

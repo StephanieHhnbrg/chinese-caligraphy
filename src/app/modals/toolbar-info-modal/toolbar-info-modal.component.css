@@ -1,0 +1,13 @@
+img {
+  width: 18px;
+  height: 18px;
+  transform: translate(5px, 1px);
+}
+
+.gh-link-dark, .gh-link-dark:visited {
+  color: white !important;
+}
+
+.gh-link-light, .gh-link-light:visited {
+  color: black !important;
+}

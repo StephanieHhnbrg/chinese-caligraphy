@@ -1,0 +1,28 @@
+.sidecar {
+  padding-left: 10px;
+  padding-top: 25px;
+  border-right: dimgrey 1px solid;
+  width: 20vw !important;
+  overflow-y: hidden;
+}
+
+.sidecar-container, .sidecar, mat-drawer {
+  height: 100vh;
+  background-color: transparent;
+  color: inherit;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  padding: 5px;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+}
+
+.open-button {
+  margin-top: 15px;
+}

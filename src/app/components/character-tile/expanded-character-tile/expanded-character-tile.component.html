@@ -1,0 +1,20 @@
+<div class="frame mat-elevation-z8"
+     [matTooltip]="tooltip" matTooltipPosition="above"
+     matTooltipClass="radical-tooltip">
+  <div class="col">
+    <div class="sign">
+      <span class="emoji">{{emoji}}</span>
+      <span class="hanzi">{{sign}}</span>
+    </div>
+    <p class="subline">{{pinyin}}&nbsp;</p>
+    <p class="subline"><span *ngIf="translation && translation.length > 0">({{ translation | translate }})</span>&nbsp;</p>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let comb of composition">
+      <app-expanded-character-tile [sign]="comb"></app-expanded-character-tile>
+    </div>
+  </div>
+</div>
+
+

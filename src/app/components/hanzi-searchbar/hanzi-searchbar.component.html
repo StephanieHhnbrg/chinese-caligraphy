@@ -1,0 +1,11 @@
+<small>Figure out, how chinese words are put together</small>
+<form>
+  <mat-form-field>
+    <mat-label>Search hanzi </mat-label>
+    <input matInput placeholder="汉字" #input [formControl]="searchBarFormControl" (keyup.enter)="search(input.value)">
+    <mat-icon matSuffix (click)="search(input.value)">search</mat-icon>
+    @if (searchBarFormControl.hasError('invalidHanzi')) {
+    <mat-error>Input chinese characters to discover their composition</mat-error>
+    }
+  </mat-form-field>
+</form>

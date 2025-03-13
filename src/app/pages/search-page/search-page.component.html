@@ -1,0 +1,52 @@
+<div id="word-page">
+  <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+  <p>&nbsp;</p>
+
+  <div class="row">
+    <app-hanzi-searchbar></app-hanzi-searchbar>
+    <button mat-icon-button *ngIf="results.length > 0 && !expandTiles"
+            (click)="expandTiles = true" matTooltip="{{'BUTTON.TOOLTIP.EXPL_EXPAND' | translate}}" >
+      <mat-icon aria-hidden="false" fontIcon="open_in_full"></mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="results.length > 0 && expandTiles"
+            (click)="expandTiles = false" matTooltip="{{'BUTTON.TOOLTIP.EXPL_MINIMIZE' | translate}}">
+      <mat-icon aria-hidden="false" fontIcon="close_fullscreen"></mat-icon>
+    </button>
+  </div>
+
+  <div class="frame alertMessage" *ngIf="alertMessages.length > 0" [style.border-color]="getColorForAlertMessages(alertMessages)">
+    <p>
+      <mat-icon aria-hidden="false" class="sentiment-icon"
+                [fontIcon]="getSentimentIconForAlertMessages(alertMessages)"
+                [style.color]="getColorForAlertMessages(alertMessages)">
+      </mat-icon>
+      {{alertMessages[0]}}
+      &nbsp;&nbsp;&nbsp;
+      <mat-icon aria-hidden="false"
+                fontIcon="close" class="close-icon"
+                (click)="alertMessages = []">
+      </mat-icon>
+    </p>
+    <ul *ngIf="alertMessages.length > 1">
+      <li *ngFor="let msg of alertMessages.slice(1)">{{msg}}</li>
+    </ul>
+
+    <button *ngIf="showRadicalButton" mat-flat-button color="accent" (click)="goToRadical()">
+      <mat-icon aria-hidden="false" fontIcon="chevron_right"></mat-icon>
+      {{"BUTTON.LEARN_MORE_ABOUT_RADICAL" | translate}}
+    </button>
+  </div>
+
+
+
+  <div *ngFor="let el of results.reverse()">
+    @if (isRadical(el)) {
+        <app-radical-info-frame [radical]="castElAsRadical(el)"></app-radical-info-frame>
+    }
+
+    @if (isInVocabularyRepertoire(el)) {
+      <app-word-info-frame [word]="castElAsWord(el)" [expanded]="expandTiles"></app-word-info-frame>
+    }
+
+  </div>
+</div>

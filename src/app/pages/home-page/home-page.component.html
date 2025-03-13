@@ -10,17 +10,21 @@
 
     <div class="column">
       <div class="button-col">
-        <button mat-flat-button (click)="scrollToElement('pinyin-tone-explanation')">
+        <button mat-flat-button (click)="goToBreadcrumbOnHomepage('pinyin-tone-explanation')">
           <mat-icon aria-hidden="false" fontIcon="chevron_right"></mat-icon>
           {{"BUTTON.GOTO_PINYIN_TONE" | translate}}
         </button>
 
-        <button mat-flat-button (click)="scrollToElement('radical-overview')">
+        <button mat-flat-button (click)="goToBreadcrumbOnHomepage('radical-overview')">
           <mat-icon aria-hidden="false" fontIcon="chevron_right"></mat-icon>
           {{"BUTTON.GOTO_RADICALS" | translate}}
         </button>
-      </div>
 
+        <button mat-flat-button (click)="goToSearchPage()">
+          <mat-icon aria-hidden="false" fontIcon="chevron_right"></mat-icon>
+          {{"BUTTON.SEARCH_HANZI" | translate}}
+        </button>
+      </div>
 
       <div class='bottom'>
       </div>

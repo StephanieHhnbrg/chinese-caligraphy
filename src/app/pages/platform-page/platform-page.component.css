@@ -1,0 +1,50 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+  text-align: left;
+  padding-top: 10px;
+}
+
+.page-title {
+  font-size: xx-large;
+}
+
+.title {
+  text-align: left;
+  width: 800px;
+}
+
+.tile {
+  width: 249px;
+  height: 140px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.router-row div {
+  padding-right: 25px;
+}
+
+.router-row div:last-child {
+  padding-right: 0;
+}
+
+.tile:hover, .caligraphy-garden:hover {
+  cursor: pointer;
+}
+
+.caligraphy-garden {
+  height: 400px;
+  width: 800px;
+  background-image: url("../../../assets/img/caligraphy-garden.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.caligraphy-garden .title {
+  padding: 20px;
+  color: white;
+}

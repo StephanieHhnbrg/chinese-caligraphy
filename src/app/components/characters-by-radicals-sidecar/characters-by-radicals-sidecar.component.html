@@ -17,14 +17,12 @@
 
       <div class="compositions row">
         <div class="composition row" *ngFor="let comb of c.composition; let i = index">
-          <div class="radical mat-elevation-z8"
-               [ngClass]="{'highlighted': isSelectedRadical(sign)}"
-               [matTooltip]="getTooltip(sign)" matTooltipPosition="above"
-               matTooltipClass="radical-tooltip"
+          <app-character-tile-with-tooltip
+               [sign]="sign"
+               [isHighlighted]="isSelectedRadical(sign)"
                (click)="scrollToRadical(sign)"
                *ngFor="let sign of getComposition(comb)">
-            {{sign}}
-          </div>
+          </app-character-tile-with-tooltip>
           <span class="plus" *ngIf="i < c.composition.length-1">+</span>
         </div>
       </div>

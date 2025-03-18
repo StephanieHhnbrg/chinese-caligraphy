@@ -54,18 +54,76 @@ body {
   color: dimgrey;
 }
 
-.lightMode .mat-button-toggle-appearance-standard.mat-button-toggle-checked,
 .lightMode .carousel .mat-mdc-icon-button {
-  background-color: #42008a;
+  background-color: darkred;
+  color: white;
 }
 
+.lightMode .mat-mdc-menu-content {
+  background-color: white;
+}
+
+.lightMode .mat-mdc-menu-item-text {
+  color: dimgray;
+}
+
+.lightMode .open-button, .lightMode .sort-button {
+  color: darkred;
+}
+
+.darkMode .mat-button-toggle-appearance-standard.mat-button-toggle-checked,
+.lightMode .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+  background-color: brown;
+  color: white;
+}
+
+.lightMode .mdc-text-field {
+  background-color: white;
+}
+
+html {
+  --mdc-filled-text-field-caret-color: salmon;
+  --mdc-filled-text-field-focus-active-indicator-color: salmon;
+  --mdc-filled-text-field-focus-label-text-color: salmon;
+}
+
+.lightMode {
+  // input field
+  --mdc-filled-text-field-container-color: #E0E2EC;
+
+  --mdc-filled-text-field-input-text-color: black;
+  --mdc-filled-text-field-input-text-placeholder-color: darkred;
+
+  --mdc-filled-text-field-label-text-color: darkred;
+  --mdc-filled-text-field-focus-label-text-color: darkred;
+  --mdc-filled-text-field-hover-label-text-color: darkred;
+  --mdc-filled-text-field-error-hover-label-text-color: darkred;
+  --mdc-filled-text-field-error-focus-label-text-color: darkred;
+  --mdc-filled-text-field-error-label-text-color: darkred;
+
+  // input field bottom border line
+  --mdc-filled-text-field-focus-active-indicator-color: darkred;
+  --mdc-filled-text-field-active-indicator-color: darkred;
+  --mdc-filled-text-field-error-active-indicator-color: darkred;
+  --mdc-filled-text-field-hover-active-indicator-color:darkred;
+  --mdc-filled-text-field-error-focus-active-indicator-color: darkred;
+  --mdc-filled-text-field-error-hover-active-indicator-color: darkred;
+
+  // input field search icon
+  --mat-form-field-error-text-color: darkred;
+  --mat-form-field-focus-select-arrow-color: darkred;
+  --mat-form-field-trailing-icon-color: darkred;
+  --mat-form-field-disabled-trailing-icon-color: darkred;
+  --mat-form-field-error-focus-trailing-icon-color: darkred;
+  --mat-form-field-error-hover-trailing-icon-color: darkred;
+  --mat-form-field-error-trailing-icon-color: darkred;
+}
 
 .close-icon {
   float: right;
   font-size: smaller;
   cursor: pointer;
 }
-
 
 .close-icon {
   float: right;
@@ -74,4 +132,8 @@ body {
 
 .close-icon:hover {
   color: dimgrey;
+}
+
+.mat-drawer-inner-container {
+  overflow: hidden !important;
 }

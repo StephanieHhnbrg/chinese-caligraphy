@@ -6,6 +6,7 @@
   overflow-y: hidden;
 }
 
+
 .sidecar-container, .sidecar, mat-drawer {
   height: 100vh;
   background-color: transparent;

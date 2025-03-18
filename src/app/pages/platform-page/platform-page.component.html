@@ -1,5 +1,6 @@
 <div class="page">
   <div class="title column">
+    <p>&nbsp;</p>
     <p>
       <span class="page-title">{{"HOME.TITLE" | translate}}&nbsp;&nbsp;</span>
       <span>{{"HOME.TITLE_CHINESE" | translate}}</span>
@@ -15,7 +16,7 @@
          (mouseleave)="vidTile1.pause()"
     >
       <video class="tile mat-elevation-z8" width="250" height="150" #vidTile1>
-        <source src="../../../assets/img/pinyin-tone.mp4" type="video/mp4">
+        <source src="./assets/img/pinyin-tone.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <p>{{"NAV.PINYIN_TONES" | translate}}</p>
@@ -26,7 +27,7 @@
          (mouseleave)="vidTile2.pause()"
     >
       <video class="tile mat-elevation-z8" width="250" height="150" #vidTile2>
-        <source src="../../../assets/img/radical-deck-5r.mp4" type="video/mp4">
+        <source src="./assets/img/radical-deck-5r.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <p>{{"NAV.RADICAL_DECK" | translate}}</p>
@@ -35,8 +36,8 @@
     <div class="column" (click)="switchPage('hanzi-search')"
          (mouseenter)="vidTile3.play()"
          (mouseleave)="vidTile3.pause()">
-      <video class="tile mat-elevation-z8" width="250" height="150" autoplay #vidTile3>
-        <source src="../../../assets/img/hanzi-search.mp4" type="video/mp4">
+      <video class="tile mat-elevation-z8" width="250" height="150" #vidTile3>
+        <source src="./assets/img/hanzi-search.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <p>{{"NAV.HANZI_SEARCH" | translate}}</p>

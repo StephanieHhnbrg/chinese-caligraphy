@@ -1,0 +1,17 @@
+.mat-accent.mat-mdc-slide-toggle {
+  --mdc-switch-selected-focus-state-layer-color: salmon;
+  --mdc-switch-selected-handle-color: darkred;
+  --mdc-switch-selected-hover-state-layer-color: salmon;
+  --mdc-switch-selected-pressed-state-layer-color: salmon;
+  --mdc-switch-selected-focus-handle-color: darkred;
+  --mdc-switch-selected-hover-handle-color: darkred;
+  --mdc-switch-selected-pressed-handle-color: darkred;
+  --mdc-switch-selected-focus-track-color: salmon;
+  --mdc-switch-selected-hover-track-color: salmon;
+  --mdc-switch-selected-pressed-track-color: salmon;
+  --mdc-switch-selected-track-color: salmon;
+  --mdc-switch-selected-icon-color: #ecdcff;
+  --mat-switch-track-outline-color: #9a8d95;
+  --mat-switch-disabled-unselected-track-outline-color: #e9e0e4;
+  --mat-switch-label-text-color: #e9e0e4;
+}

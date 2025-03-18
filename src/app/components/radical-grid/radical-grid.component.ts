@@ -51,7 +51,9 @@ export class RadicalGridComponent implements OnInit, AfterViewInit, OnDestroy {
               this.showAllRadicals();
             }
             this.selected = [radical];
-            this.openRadicalModal(radical);
+            if (params['view'] != 'single') {
+              this.openRadicalModal(radical);
+            }
           }
         }
         if (params['sort'] == 'occurence') {

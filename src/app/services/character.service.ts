@@ -169,6 +169,14 @@ export class CharacterService {
     return this.radicals.at(randomIndex)!;
   }
 
+  public getRadicalByIndex(index: number): Radical | undefined {
+    if (index < 0 || index >= this.radicals.length) {
+      console.error("index out of bound");
+      return undefined;
+    }
+    return this.radicals.at(index);
+  }
+
   public getWord(comb: string): Word | undefined {
     if (this.characterMap.has(comb)) {
       let word = this.characterMap.get(comb)!;
@@ -193,6 +201,20 @@ export class CharacterService {
       }
     }
     return [];
+  }
+
+  public addWordToVocabulary(word: Word) {
+    this.characterMap.set(word.hanzi, {c: word, usedIn: []});
+    // TODO: add child parent relationships?
+    // TODO: somehow register event somewhere to reevaluate chanzi model and to add word to excel
+  }
+
+  public getWordsWithComposition(amountOfRads: number): Word[] {
+    let words = COMBINATIONS.concat(WORDS);
+    words  = words.filter(w => w.hanzi.length == 1 && w.composition.length == amountOfRads);
+    words = words.filter(w => w.composition.filter(c => this.isRadical(c)).length == w.composition.length);
+    console.log(words.length);
+    return words;
   }
 
 }

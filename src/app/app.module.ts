@@ -53,6 +53,7 @@ import {MenuSidecarComponent} from "./components/menu-sidecar/menu-sidecar.compo
 import {RadicalInfoModalComponent} from "./modals/radical-info-modal/radical-info-modal.component";
 import {ToolbarInfoModalComponent} from "./modals/toolbar-info-modal/toolbar-info-modal.component";
 import {CaligraphyGardenPageComponent} from "./pages/caligraphy-garden-page/caligraphy-garden-page.component";
+import {ChanziModelService} from "./services/chanzi-model.service";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -120,6 +121,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideAnimationsAsync(),
     CharacterService,
+    ChanziModelService,
     CustomValidators,
   ],
   bootstrap: [AppComponent]

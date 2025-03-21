@@ -1,7 +1,7 @@
 import {Word, WORD_TYPE} from "../interfaces/word.data";
 
 export const BODY: Word[] = [
-  { translationKey: "head", hanzi: '头', pinyin: 'tóu', composition: ['⼎', '大'], type: [WORD_TYPE.NOUN]},
+  { translationKey: "head", hanzi: '头', pinyin: 'tóu', composition: ['冫', '大'], type: [WORD_TYPE.NOUN]},
   { translationKey: "hair", hanzi: '头发', pinyin: 'tóufà', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "eye", hanzi: '眼睛', pinyin: 'yǎnjīng', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "-", hanzi: '睛', pinyin: 'jīng', composition: ['目', '青'], type: [WORD_TYPE.COMB_EL]},

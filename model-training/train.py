@@ -1,16 +1,17 @@
 print("\033[1m\033[35mStep 1/6:\033[0m Import libraries")
+import os
 import tensorflow as tf
 from tensorflow.keras import layers, models, Input
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
 from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
 from tensorflow.keras.utils import Sequence
+import tensorflow.keras.backend as K
 import numpy as np
-import os
-from collections import Counter
 
 
 tf.config.set_visible_devices([], 'GPU')
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
 
 print("\033[1m\033[35mStep 2/6:\033[0m Load datasets")
 train_dir = './dataset/train'
@@ -77,14 +78,6 @@ test_gen = MultiLabelDataGenerator(train_image_paths, batch_size=32, image_size=
 # TODO change to test_image_paths as soon as data split happened
 
 
-label_counts = Counter()
-for path in train_image_paths:
-  label_str = os.path.splitext(os.path.basename(path))[0].split('-')[0]  # Extract the label
-  for label in label_str:
-    label_counts[label] += 1
-print("Class distribution:", label_counts)
-
-
 print("\033[1m\033[35mStep 3/6:\033[0m Define model and callbacks")
 model = models.Sequential([
   # Input layer
@@ -109,7 +102,7 @@ model = models.Sequential([
   layers.Flatten(),
 
   # Dense (fully connected) layer
-  layers.Dense(128, activation='relu'),
+  layers.Dense(512, activation='relu'),
   layers.Dropout(0.5),
 
   # Output layer - Softmax + Sigmoid activation func applied for Multi-label classification
@@ -125,20 +118,32 @@ checkpoint_callback = ModelCheckpoint(
 
 early_stopping_callback = EarlyStopping(
   monitor='val_loss',     # Stop training if validation loss doesn't improve
-  patience=5,             # Number of epochs to wait before stopping
+  patience=3,             # Number of epochs to wait before stopping
   verbose=1
 )
 
 print("\033[1m\033[35mStep 4/6:\033[0m Compile model")
+def focal_loss(gamma=2., alpha=0.25):
+  def focal_loss_fixed(y_true, y_pred):
+    epsilon = K.epsilon()
+    y_pred = K.clip(y_pred, epsilon, 1. - epsilon)
+    cross_entropy = -y_true * K.log(y_pred)
+    loss = alpha * K.pow(1 - y_pred, gamma) * cross_entropy
+    return K.sum(loss, axis=1)
+  return focal_loss_fixed
+
 model.compile(optimizer='adam',
-              loss='binary_crossentropy',
+              loss=focal_loss(gamma=2., alpha=0.25), # loss='binary_crossentropy',
               metrics=['accuracy'])
 
 print("\033[1m\033[35mStep 5/6:\033[0m Train model")
+class_weights = {i: 1.0 for i in range(len(classes))} # TODO adapt for imbalanced classes
+
 model.fit(
   train_gen,
-  epochs=50,
+  epochs=10,
   validation_data=test_gen,
+#  class_weight=class_weights,
   verbose=2,
   callbacks=[checkpoint_callback, early_stopping_callback]
 )

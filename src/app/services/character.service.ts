@@ -15,9 +15,13 @@ export class CharacterService {
 
   private radicalsAreLoaded$ = new Subject<boolean>();
   private charactersAreLoaded$ = new Subject<boolean>();
+  private isLoaded = false;
   private radicals : Radical[] = [];
   private radicalMap = new Map<string, Radical>();
   private characterMap = new Map<string, {c: Word | Radical, usedIn : string[]}>();
+
+  private undefinedCharacters = new Set<string>();
+
   constructor(private http: HttpClient) {
     this.importRadicalsFromXlsx().subscribe(() => {
       // TODO: loading screen
@@ -25,6 +29,7 @@ export class CharacterService {
       this.initCharacterMap();
       this.initCharacterRelationships();
       this.charactersAreLoaded$.next(true);
+      this.isLoaded = true;
     });
   }
 
@@ -34,6 +39,10 @@ export class CharacterService {
 
   public getCharactersAreLoadedObservable(): Observable<boolean> {
     return this.charactersAreLoaded$.asObservable();
+  }
+
+  public isServiceReady(): boolean {
+    return this.isLoaded;
   }
 
 
@@ -59,9 +68,6 @@ export class CharacterService {
       this.radicalMap.set(r.sign, r);
     });
 
-    let countRefactors = 0;
-    let characters: string[] = [];
-    let duplicated: string[] = [];
     COMBINATIONS.concat(WORDS).forEach(word => {
       if (this.characterMap.has(word.hanzi)) {
         console.log(`Word already defined: ${word.hanzi} - Please remove.`);
@@ -72,31 +78,9 @@ export class CharacterService {
       }
 
       this.characterMap.set(word.hanzi, {c: word, usedIn: []})
-
-      if (word.hanzi.length > 0) {
-        for (let i = 0; i < word.hanzi.length; i++) {
-          let c = word.hanzi.at(i)!;
-          if (word.composition.length > i && word.composition.at(i)!.length > 1) {
-            if(characters.includes(c)) {
-              duplicated.push(c);
-            } else {
-              characters.push(c);
-            }
-            if(this.radicalMap.has(c)) {
-              console.log(`The composition of the radical ${c} is redefined in the word ${word.hanzi} - Please remove.`)
-            }
-          }
-        }
-      }
     });
 
-    console.log(countRefactors + " words to be refactored");
-
     console.log((COMBINATIONS.length+WORDS.length) + " words defined");
-    console.log(characters.length + " characters defined");
-    if (duplicated.length>0) {
-      console.log(`The composition of the following characters might be defined multiple times within different words - Please extract as comb elements - ${duplicated}`);
-    }
   }
 
   private initCharacterRelationships() {
@@ -114,6 +98,12 @@ export class CharacterService {
         }
       }
     });
+
+    if (this.undefinedCharacters.size > 0) {
+      console.log("Undefined characters or variants (TODO): ");
+      console.log(this.undefinedCharacters);
+    }
+
   }
 
   private addChildParentRelationship(children: string[], parentWord: string) {
@@ -130,7 +120,7 @@ export class CharacterService {
           this.addChildParentRelationship(grandChildren, parentWord);
         }
       } else {
-        console.log(`Character not defined: ${c} within ${parentWord}`);
+        this.undefinedCharacters.add(c);
       }
     });
   }
@@ -213,7 +203,6 @@ export class CharacterService {
     let words = COMBINATIONS.concat(WORDS);
     words  = words.filter(w => w.hanzi.length == 1 && w.composition.length == amountOfRads);
     words = words.filter(w => w.composition.filter(c => this.isRadical(c)).length == w.composition.length);
-    console.log(words.length);
     return words;
   }
 

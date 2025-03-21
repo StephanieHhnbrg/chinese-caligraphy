@@ -11,15 +11,15 @@ export class ChanziModelService {
   private model: tf.LayersModel | undefined;
 
   constructor() {
-    console.log("Model start loading")
     this.loadModel();
   }
 
   private async loadModel() {
     try {
-      this.model = await tf.loadLayersModel('assets/model/model.json');
+      this.model = await tf.loadLayersModel('assets/model/model.json', {strict: false});
       this.modelIsLoaded$.next(true);
     } catch (error) {
+      this.modelIsLoaded$.next(false);
       console.error('Error loading the model:', error);
     }
   }
@@ -41,7 +41,7 @@ export class ChanziModelService {
     }
 
     let img = this.textToImage(character);
-    let inputTensor = tf.browser.fromPixels(img).resizeNearestNeighbor([100, 100]).toFloat().expandDims(0);
+    let inputTensor = tf.browser.fromPixels(img).resizeNearestNeighbor([100, 100]).toFloat().mean(2).expandDims(-1).expandDims(0);
     let prediction = await this.model.predict(inputTensor) as tf.Tensor;
     let data: Float32Array = (<Float32Array>prediction.dataSync());
     return data;

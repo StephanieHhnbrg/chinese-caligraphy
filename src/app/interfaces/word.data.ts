@@ -2,7 +2,7 @@ export interface Word {
   translationKey: string;
   hanzi: string;
   pinyin: string;
-  composition: string[][];
+  composition: string[];
   emoji?: string;
 
   type: WORD_TYPE[];

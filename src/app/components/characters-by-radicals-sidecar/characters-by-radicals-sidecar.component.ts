@@ -39,15 +39,14 @@ export class CharactersByRadicalsSidecarComponent implements OnInit, OnDestroy {
     return this.radicals.includes(r);
   }
 
-  public getComposition(comp: string[]): string[] {
+  public getComposition(comp: string): string[] {
     let result: string[] = [];
-    comp.forEach(c => {
-      if (this.characterService.isRadical(c)) {
-        result.push(c);
-      } else {
-       result = result.concat(this.characterService.getComposition(c));
-      }
-    });
+
+    if (this.characterService.isRadical(comp)) {
+      result.push(comp);
+    } else {
+     result = result.concat(this.characterService.getComposition(comp));
+    }
     return result;
   }
 

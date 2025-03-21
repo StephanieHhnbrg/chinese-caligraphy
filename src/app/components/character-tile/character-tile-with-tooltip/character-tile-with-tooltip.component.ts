@@ -44,7 +44,7 @@ export class CharacterTileWithTooltipComponent {
         if (word.translationKey.length > 0) {
           tooltip += this.translate.instant(word.translationKey) + ' \n'
         }
-        tooltip += word.composition[0].reduce((prev, curr) => prev + " " + curr);
+        tooltip += word.composition.reduce((prev, curr) => prev + " " + curr);
         return tooltip;
       }
 

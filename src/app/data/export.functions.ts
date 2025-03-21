@@ -40,19 +40,19 @@ export function exportRadicalsAsExcel() {
 export function exportWordsAsExcel() {
   let wb: XLSX.WorkBook = XLSX.utils.book_new();
 
-  this.addSheetToWb(wb, FRUITS, 'fruits');
-  this.addSheetToWb(wb, VEGGIES, 'veggies');
-  this.addSheetToWb(wb, DRINKS, 'drinks');
-  this.addSheetToWb(wb, FOOD, 'food');
-  this.addSheetToWb(wb, ADJECTIVES, 'adjectives');
-  this.addSheetToWb(wb, FLORA, 'flora');
-  this.addSheetToWb(wb, FAUNA, 'fauna');
-  this.addSheetToWb(wb, COLORS, 'colors');
-  this.addSheetToWb(wb, GRAMMAR, 'grammar');
-  this.addSheetToWb(wb, QUESTION_WORDS, 'question words');
-  this.addSheetToWb(wb, PERSONAL_PRONOUN, 'personal pronouns');
-  this.addSheetToWb(wb, BODY, 'body');
-  this.addSheetToWb(wb, MEDICINE, 'medicine');
+  addSheetToWb(wb, FRUITS, 'fruits');
+  addSheetToWb(wb, VEGGIES, 'veggies');
+  addSheetToWb(wb, DRINKS, 'drinks');
+  addSheetToWb(wb, FOOD, 'food');
+  addSheetToWb(wb, ADJECTIVES, 'adjectives');
+  addSheetToWb(wb, FLORA, 'flora');
+  addSheetToWb(wb, FAUNA, 'fauna');
+  addSheetToWb(wb, COLORS, 'colors');
+  addSheetToWb(wb, GRAMMAR, 'grammar');
+  addSheetToWb(wb, QUESTION_WORDS, 'question words');
+  addSheetToWb(wb, PERSONAL_PRONOUN, 'personal pronouns');
+  addSheetToWb(wb, BODY, 'body');
+  addSheetToWb(wb, MEDICINE, 'medicine');
   XLSX.writeFile(wb, 'test.xlsx');
 }
 
@@ -68,6 +68,6 @@ function mapData(words: Word[]): any {
 }
 
 function addSheetToWb(wb: XLSX.WorkBook, words: Word[], sheetName: string) {
-  let ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.mapData(words));
+  let ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(mapData(words));
   XLSX.utils.book_append_sheet(wb, ws, `${sheetName} (${words.length})`);
 }

@@ -5,12 +5,9 @@
   {{word.pinyin}}
 
   <div class="compositions row">
-    <div class="composition row" *ngFor="let comb of word.composition; let i = index"
-         [ngClass]="{'frame': comb.length > 1 || !expanded }">
-      <ng-container *ngFor="let sign of comb">
-        <app-character-tile-with-tooltip *ngIf="!expanded" [sign]="sign"></app-character-tile-with-tooltip>
-        <app-expanded-character-tile *ngIf="expanded" [sign]="sign"></app-expanded-character-tile>
-      </ng-container>
+    <div class="composition row" *ngFor="let sign of word.composition; let i = index">
+      <app-character-tile-with-tooltip *ngIf="!expanded" [sign]="sign"></app-character-tile-with-tooltip>
+      <app-expanded-character-tile *ngIf="expanded" [sign]="sign"></app-expanded-character-tile>
     </div>
   </div>
 

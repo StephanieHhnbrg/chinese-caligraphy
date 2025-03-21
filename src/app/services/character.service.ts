@@ -67,9 +67,8 @@ export class CharacterService {
         console.log(`Word already defined: ${word.hanzi} - Please remove.`);
       }
 
-      if (word.hanzi.length > 1 && word.composition.toString().replaceAll(',','').length > word.hanzi.length) {
-        console.log("Character can be extracted out of the word: "+word.hanzi);
-        countRefactors++;
+      if (word.hanzi.length > 1 && word.composition.length == 0) {
+        word.composition = word.hanzi.split("");
       }
 
       this.characterMap.set(word.hanzi, {c: word, usedIn: []})
@@ -103,8 +102,7 @@ export class CharacterService {
   private initCharacterRelationships() {
     COMBINATIONS.concat(WORDS).forEach(word => {
       if (word.composition.length > 0) {
-        let characters = word.composition.reduce((prev, curr) => prev.concat(curr));
-        this.addChildParentRelationship(characters, word.hanzi);
+        this.addChildParentRelationship(word.composition, word.hanzi);
 
         if (word.hanzi.length > 1) {
           for (let i = 0; i < word.hanzi.length; i++) {
@@ -128,7 +126,7 @@ export class CharacterService {
         }
         this.characterMap.set(c, {...character, usedIn})
         if ('composition' in character.c && (<Word>character.c).composition.length > 0) {
-          let grandChildren = (<Word>character.c).composition.reduce((prev, curr) => prev.concat(curr));
+          let grandChildren = (<Word>character.c).composition;
           this.addChildParentRelationship(grandChildren, parentWord);
         }
       } else {
@@ -191,7 +189,7 @@ export class CharacterService {
     if (this.characterMap.has(comb)) {
       let word = this.characterMap.get(comb)!;
       if ('composition' in word.c) {
-        return (<Word>word.c).composition[0];
+        return (<Word>word.c).composition;
       }
     }
     return [];

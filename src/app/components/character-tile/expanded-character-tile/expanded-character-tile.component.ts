@@ -49,7 +49,7 @@ export class ExpandedCharacterTileComponent implements OnInit {
         this.emoji = word.emoji || "";
         this.pinyin = word.pinyin;
         this.translation = this.translate.instant(word.translationKey);
-        this.composition = word.composition[0];
+        this.composition = word.composition;
       }
     }
   }

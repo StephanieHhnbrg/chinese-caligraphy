@@ -17,7 +17,8 @@
           class="open-button"
           matTooltip="{{'NAV.SIDECAR.OPEN_TOOLTIP' | translate}}"
           mat-icon-button aria-label="Open Menu">
-    <mat-icon aria-hidden="false" fontIcon="chevron_right"></mat-icon>
+    <mat-icon aria-hidden="false" [fontIcon]="getOpenMenuIcon()"></mat-icon>
+
   </button>
 
 </mat-drawer-container>

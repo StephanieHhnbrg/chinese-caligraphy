@@ -6,6 +6,16 @@
   overflow-y: hidden;
 }
 
+@media only screen and (max-width: 420px) {
+  .sidecar {
+    width: 95vw !important;
+  }
+
+  .menu-item {
+    margin-top: 20px;
+  }
+
+}
 
 .sidecar-container, .sidecar, mat-drawer {
   height: 100vh;

@@ -21,11 +21,19 @@ export class MenuSidecarComponent implements AfterViewInit {
 
   public switchPage(url: string) {
     this.router.navigate([`/${url}`], {});
+    this.menuSidecar.close();
   }
   public ngAfterViewInit() { // FIXME ExpressionChangedAfterItHasBeenCheckedError
-    if (this.menuSidecar) {
+    if (this.menuSidecar && !this.isMobileView()) {
       this.menuSidecar.open();
     }
+  }
+
+  public getOpenMenuIcon(): string {
+    return this.isMobileView() ? 'menu' : 'chevron_right';
+  }
+  private isMobileView(): boolean {
+    return window.screenX <= 420;
   }
 
 }

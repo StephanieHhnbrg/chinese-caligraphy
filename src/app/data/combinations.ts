@@ -27,7 +27,7 @@ export const COMBINATIONS: Word[] = [
   { translationKey: "cloud, scaling", hanzi: '云', pinyin: 'yún', composition: ['二','厶'], type: [WORD_TYPE.NOUN, WORD_TYPE.ADJECTIVE]},
   { translationKey: "so, therefore, only", hanzi: '乃', pinyin: 'nǎi', composition: ['丿','乛','𠃌'], type: [WORD_TYPE.ADVERB]},
   { translationKey: "", hanzi: '市', pinyin: 'shì', composition: ['十','冂'], type: [WORD_TYPE.COMB_EL]},
-  { translationKey: "unanonimous, all, together", hanzi: '佥', pinyin: 'qiān', composition: ['人','一','𭕄','一'], type: [WORD_TYPE.ADJECTIVE, WORD_TYPE.ADVERB]},
+  { translationKey: "unanonimous, all, together", hanzi: '佥', pinyin: 'qiān', composition: ['人','一','⺌','一'], type: [WORD_TYPE.ADJECTIVE, WORD_TYPE.ADVERB]},
   { translationKey: "manage, control, department", hanzi: '司', pinyin: 'sī', composition: ['𠃌', '一', '口'], type: [WORD_TYPE.VERB, WORD_TYPE.NOUN]},
   { translationKey: "loose, release", hanzi: '松', pinyin: 'sōng', composition: ['木','公'], type: [WORD_TYPE.VERB]},
   { translationKey: "risk, bold", hanzi: '冒', pinyin: 'mào', composition: ['月', '一', '一', '目'], type: [WORD_TYPE.NOUN, WORD_TYPE.ADJECTIVE]},
@@ -39,4 +39,8 @@ export const COMBINATIONS: Word[] = [
   { translationKey: "protect", hanzi: '护', pinyin: 'hù', composition: ['扌', '户'], type: [WORD_TYPE.VERB]},
   { translationKey: "beg, request", hanzi: '求', pinyin: 'hù', composition: ['一', '水', '丶'], type: [WORD_TYPE.VERB]},
   { translationKey: "bad, spoiled, broken, to break down", hanzi: '坏', pinyin: 'huài', composition: ['土', '不'], type: [WORD_TYPE.ADJECTIVE, WORD_TYPE.VERB]},
+  { translationKey: "-", hanzi: '𠂎', pinyin: '-', composition: ['匚','丿'], type: [WORD_TYPE.COMB_EL]},
+  { translationKey: "11. Earthly Branch", hanzi: '戌', pinyin: 'xū', composition: ['丿', '戈'], type: [WORD_TYPE.COMB_EL]},
+  { translationKey: "7. Earthly Branch", hanzi: '午', pinyin: 'wǔ', composition: ['𠂉', '十'], type: [WORD_TYPE.COMB_EL]},
+  { translationKey: "3. Heavenly Steam", hanzi: '丙', pinyin: 'bǐng', composition: ['一', '内'], type: [WORD_TYPE.COMB_EL]},
 ];

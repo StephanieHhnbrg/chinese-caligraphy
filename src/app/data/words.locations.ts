@@ -33,6 +33,7 @@ export const LOCATIONS: Word[] = [
   { translationKey: "beside, side, else", hanzi: '旁', pinyin: 'páng', composition: ['亠','丶','丶','冖','丶','万'], type: [WORD_TYPE.PREPROSITION, WORD_TYPE.NOUN, WORD_TYPE.ADVERB]},
   { translationKey: "side, edge", hanzi: '边', pinyin: 'biān', composition: ['辶', '力'], type: [WORD_TYPE.NOUN]},
   { translationKey: "inside", hanzi: '里面', pinyin: 'lǐmiàn', composition: [], type: [WORD_TYPE.NOUN]},
+  { translationKey: "inside, inner, within", hanzi: '内', pinyin: 'nèi', composition: ['冂', '人'], type: [WORD_TYPE.ADJECTIVE, WORD_TYPE.PREPROSITION]},
   { translationKey: "front, forward, ahead", hanzi: '前', pinyin: 'qián', composition: ['丶','丶','一','月','刂'], type: [WORD_TYPE.NOUN]},
   { translationKey: "front, frontside", hanzi: '前面', pinyin: 'qiánmiàn', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "behind, backside", hanzi: '后面', pinyin: 'hòumiàn', composition: [], type: [WORD_TYPE.NOUN]},

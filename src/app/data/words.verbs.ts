@@ -117,7 +117,7 @@ export const VERBS: Word[] = [
   { translationKey: "do, manage, handle, play with, fool with, mess with, fix, toy with", hanzi: '弄', pinyin: 'nòng', composition: ['王', '廾'], type: [WORD_TYPE.VERB]},
   { translationKey: "treat, invite to dinner", hanzi: '请客', pinyin: 'qǐngkè', composition: [], type: [WORD_TYPE.VERB]},
   { translationKey: "arrange, tidy up", hanzi: '整理', pinyin: 'zhěnglǐ', composition: [], type: [WORD_TYPE.VERB]},
-  { translationKey: "manage, tidy, put in order, acknowledge", hanzi: '理', pinyin: 'lǐ', composition: ['𤣩','里'], type: [WORD_TYPE.VERB]},
+  { translationKey: "manage, tidy, put in order, acknowledge", hanzi: '理', pinyin: 'lǐ', composition: ['玉','里'], type: [WORD_TYPE.VERB]},
   { translationKey: "sweep the floor", hanzi: '扫地', pinyin: 'sǎodì', composition: [], type: [WORD_TYPE.VERB]},
   { translationKey: "sweep, broom", hanzi: '扫', pinyin: 'sǎo', composition: ['扌', '彐'], type: [WORD_TYPE.VERB, WORD_TYPE.NOUN]},
   { translationKey: "break, smash", hanzi: '打破', pinyin: 'dǎpò', composition: [], type: [WORD_TYPE.VERB]},
@@ -159,6 +159,7 @@ export const VERBS: Word[] = [
   { translationKey: "rent, hire, lease", hanzi: '租', pinyin: 'zū', composition: ['禾','月','一'], type: [WORD_TYPE.VERB]},
   { translationKey: "read, study, say, think, idea, thought", hanzi: '念', pinyin: 'niàn', composition: ['今','心'], type: [WORD_TYPE.VERB, WORD_TYPE.NOUN]},
   { translationKey: "smell, hear, sniff at, famous, well-known", hanzi: '闻', pinyin: 'wén', composition: ['门','耳'], type: [WORD_TYPE.VERB, WORD_TYPE.ADJECTIVE]},
+  { translationKey: "revere, respect, 2. Earthly Branch", hanzi: '寅', pinyin: 'yín', composition: ['宀', '一', '由', '八'], type: [WORD_TYPE.VERB]},
 
 ];
 

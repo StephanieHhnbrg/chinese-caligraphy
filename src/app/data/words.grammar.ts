@@ -14,6 +14,7 @@ export const GRAMMAR: Word[] = [
   { translationKey: "none, no, not", hanzi: '无', pinyin: 'wú', composition: ['一','尢'], type: [WORD_TYPE.ADVERB]},
   { translationKey: "therefore, hence, intentionally", hanzi: '故', pinyin: 'gù', composition: ['古', '攵'], type: [WORD_TYPE.ADVERB]},
   { translationKey: "again, once again, one more, another, any more", hanzi: '再', pinyin: 'zài', composition: ['一', '土', '月'], type: [WORD_TYPE.ADVERB, WORD_TYPE.ADJECTIVE]},
+  { translationKey: "this, almost, nearly, just, for the time being", hanzi: '且', pinyin: 'qiě', composition: ['月', '一'], type: [WORD_TYPE.ADVERB]},
 
 ];
 

@@ -7,6 +7,7 @@ export const FAUNA: Word[] = [
   { translationKey: "monkey", hanzi: '猴', pinyin: 'hóu', composition: ['犭', '亻', '一', '亠', '矢'], type: [WORD_TYPE.NOUN]},
   { translationKey: "chicken", hanzi: '鸡', pinyin: 'jī', composition: ['又','鸟'], type: [WORD_TYPE.NOUN]},
   { translationKey: "elephant, picture, image, resemblance", hanzi: '像', pinyin: 'xiàng', composition: ['亻', '象'], type: [WORD_TYPE.NOUN]},
+  { translationKey: "snake, 6. Earthly Branch", hanzi: '巳', pinyin: 'sì', composition: ['コ', '乚'], type: [WORD_TYPE.NOUN]},
 
 ];
 

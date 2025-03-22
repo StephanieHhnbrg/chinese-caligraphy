@@ -68,6 +68,7 @@ export const FOOD: Word[] = [
   { translationKey: "chopsticks", hanzi: '筷子', pinyin: 'kuàizi', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "-", hanzi: '筷', pinyin: 'kuài', composition: ['⺮', '快'], type: [WORD_TYPE.COMB_EL]},
   { translationKey: "fork", hanzi: '叉', pinyin: 'chā', composition: ['又', '丶'], type: [WORD_TYPE.NOUN]},
+  { translationKey: "pair of butcher knives, 4. Earthly Branch", hanzi: '卯', pinyin: 'mǎo', composition: ['𠂎','卩'], type: [WORD_TYPE.NOUN]},
   { translationKey: "spoon", hanzi: '勺', pinyin: 'sháo', composition: ['勹', '丶'], type: [WORD_TYPE.NOUN]},
   { translationKey: "breakfast", hanzi: '早饭', pinyin: 'zǎofàn', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "lunch", hanzi: '中饭', pinyin: 'zhōngfàn', composition: [], type: [WORD_TYPE.NOUN]},

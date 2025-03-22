@@ -9,7 +9,7 @@ export const FREETIME: Word[] = [
   { translationKey: "instution, courtyard, college", hanzi: '院', pinyin: 'yuàn', composition: ['⻖','宀','元'], type: [WORD_TYPE.NOUN]},
   { translationKey: "game", hanzi: '游戏', pinyin: 'yóuxì', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "play, drama, show", hanzi: '戏', pinyin: 'xì', composition: ['又','戈'], type: [WORD_TYPE.NOUN]},
-  { translationKey: "play, enjoy, toy", hanzi: '玩', pinyin: 'wán', composition: ['𤣩','元'], type: [WORD_TYPE.VERB,WORD_TYPE.NOUN]},
+  { translationKey: "play, enjoy, toy", hanzi: '玩', pinyin: 'wán', composition: ['玉','元'], type: [WORD_TYPE.VERB,WORD_TYPE.NOUN]},
   { translationKey: "play, have fun", hanzi: '玩儿', pinyin: 'wánr', composition: [], type: [WORD_TYPE.VERB]},
   { translationKey: "song", hanzi: '歌', pinyin: 'gē', composition: ['哥','欠'], type: [WORD_TYPE.NOUN]},
   { translationKey: "sing", hanzi: '唱歌', pinyin: 'chànggē', composition: [], type: [WORD_TYPE.VERB]},
@@ -21,7 +21,7 @@ export const FREETIME: Word[] = [
   { translationKey: "music", hanzi: '音乐', pinyin: 'yīnyuè', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "concert", hanzi: '演唱会', pinyin: 'yǎnchànghuì', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "drama, play, opera", hanzi: '剧', pinyin: 'jù', composition: ['居', '刂'], type: [WORD_TYPE.NOUN]},
-  { translationKey: "performance, perform", hanzi: '表演', pinyin: 'biǎoyǎn', composition: ['表', '演'], type: [WORD_TYPE.NOUN, WORD_TYPE.VERB]},
+  { translationKey: "performance, perform", hanzi: '表演', pinyin: 'biǎoyǎn', composition: [], type: [WORD_TYPE.NOUN, WORD_TYPE.VERB]},
   { translationKey: "play, act, perform", hanzi: '演', pinyin: 'yǎn', composition: ['氵','寅'], type: [WORD_TYPE.VERB]},
   { translationKey: "take a photo", hanzi: '照相', pinyin: 'zhàoxiàng', composition: [], type: [WORD_TYPE.VERB]},
   { translationKey: "write", hanzi: '写字', pinyin: 'xiězì', composition: [], type: [WORD_TYPE.VERB]},
@@ -34,7 +34,7 @@ export const FREETIME: Word[] = [
 ];
 
 export const SPORT: Word[] = [
-  { translationKey: "ball", hanzi: '球', pinyin: 'qiú', composition: ['𤣩', '求'], type: [WORD_TYPE.NOUN]},
+  { translationKey: "ball", hanzi: '球', pinyin: 'qiú', composition: ['玉', '求'], type: [WORD_TYPE.NOUN]},
   { translationKey: "(ball) sports star", hanzi: '球星', pinyin: 'qiúxīng', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "play ball games, ball sports", hanzi: '打球', pinyin: 'dǎqiú', composition: [], type: [WORD_TYPE.VERB]},
   { translationKey: "basketball", hanzi: '篮球', pinyin: 'lánqiú', composition: [], type: [WORD_TYPE.NOUN]},

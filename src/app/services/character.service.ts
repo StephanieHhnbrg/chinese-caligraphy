@@ -20,8 +20,6 @@ export class CharacterService {
   private radicalMap = new Map<string, Radical>();
   private characterMap = new Map<string, {c: Word | Radical, usedIn : string[]}>();
 
-  private undefinedCharacters = new Set<string>();
-
   constructor(private http: HttpClient) {
     this.importRadicalsFromXlsx().subscribe(() => {
       // TODO: loading screen
@@ -62,11 +60,42 @@ export class CharacterService {
     return finished$.asObservable();
   }
 
+  private extractSigns(text: string | undefined): string[] {
+    let result: string[] = [];
+    if (text) {
+      if (text.length > 1) {
+        let trimmed = text!.replaceAll(" ", "").replaceAll(",", "");
+        for (let i = 0; i < trimmed.length; i++) {
+          result.push(trimmed.charAt(i));
+        }
+      } else {
+        result.push(text);
+      }
+    }
+    return result;
+  }
+
+  private getAndInitRadicalsSubstitutes(r: Radical): string[] {
+    let subs: string[] = [];
+    subs = subs.concat(this.extractSigns(r.variant));
+    subs = subs.concat(this.extractSigns(r.original));
+
+    subs.forEach(sub => {
+      let c: Word = { translationKey: r.en, hanzi: sub, pinyin: r.pinyin, composition: [r.sign], emoji: r.emoji, type: []};
+      this.characterMap.set(sub, {c, usedIn: []});
+    })
+
+    return subs;
+  }
+
   private initCharacterMap() {
     this.radicals.forEach(r => {
-      this.characterMap.set(r.sign, {c: r, usedIn: []});
+      let usedIn = this.getAndInitRadicalsSubstitutes(r);
+      this.characterMap.set(r.sign, {c: r, usedIn});
       this.radicalMap.set(r.sign, r);
     });
+
+
 
     COMBINATIONS.concat(WORDS).forEach(word => {
       if (this.characterMap.has(word.hanzi)) {
@@ -99,11 +128,6 @@ export class CharacterService {
       }
     });
 
-    if (this.undefinedCharacters.size > 0) {
-      console.log("Undefined characters or variants (TODO): ");
-      console.log(this.undefinedCharacters);
-    }
-
   }
 
   private addChildParentRelationship(children: string[], parentWord: string) {
@@ -120,7 +144,7 @@ export class CharacterService {
           this.addChildParentRelationship(grandChildren, parentWord);
         }
       } else {
-        this.undefinedCharacters.add(c);
+        console.error(`The character ${c} used in the composition of the word ${parentWord} is not defined.`);
       }
     });
   }

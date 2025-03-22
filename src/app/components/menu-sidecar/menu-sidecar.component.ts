@@ -33,7 +33,7 @@ export class MenuSidecarComponent implements AfterViewInit {
     return this.isMobileView() ? 'menu' : 'chevron_right';
   }
   private isMobileView(): boolean {
-    return window.screenX <= 420;
+    return window.innerWidth <= 420;
   }
 
 }

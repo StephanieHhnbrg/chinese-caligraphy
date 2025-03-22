@@ -25,7 +25,7 @@ export const SCHOOL: Word[] = [
 export const WORK: Word[] = [
   { translationKey: "company", hanzi: '公司', pinyin: 'gōngsī', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "go to work", hanzi: '上班', pinyin: 'shàngbān', composition: [], type: [WORD_TYPE.VERB]},
-  { translationKey: "shift, squad, class, scheduled, regular", hanzi: '班', pinyin: 'bān', composition: ['𤣩','刂', '王'], type: [WORD_TYPE.NOUN, WORD_TYPE.ADJECTIVE]},
+  { translationKey: "shift, squad, class, scheduled, regular", hanzi: '班', pinyin: 'bān', composition: ['玉','刂', '王'], type: [WORD_TYPE.NOUN, WORD_TYPE.ADJECTIVE]},
   { translationKey: "work, job", hanzi: '工作', pinyin: 'gōngzuò', composition: [], type: [WORD_TYPE.VERB, WORD_TYPE.NOUN]},
   { translationKey: "make an appointment, invite", hanzi: '约', pinyin: 'yuē', composition: ['纟','勺'], type: [WORD_TYPE.VERB]},
   { translationKey: "hold a meeting", hanzi: '开会', pinyin: 'kāihuì', composition: [], type: [WORD_TYPE.VERB]},
@@ -38,5 +38,6 @@ export const WORK: Word[] = [
   { translationKey: "aid, help, assist", hanzi: '帮', pinyin: 'bāng', composition: ['手', '⻏', '巾'], type: [WORD_TYPE.VERB]},
   { translationKey: "police, police officer", hanzi: '警察', pinyin: 'jǐngchá', composition: [], type: [WORD_TYPE.NOUN]},
   { translationKey: "police, police force, alert, vigilant", hanzi: '警', pinyin: 'jǐng', composition: ['艹', '勹', '口', '攵', '言'], type: [WORD_TYPE.NOUN, WORD_TYPE.ADJECTIVE]}, // 句
+  { translationKey: "table, list, form", hanzi: '表', pinyin: 'biǎo', composition: ['土', '衣'], type: [WORD_TYPE.NOUN]}, // 龶
 ];
 

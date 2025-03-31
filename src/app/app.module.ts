@@ -54,6 +54,7 @@ import {RadicalInfoModalComponent} from "./modals/radical-info-modal/radical-inf
 import {ToolbarInfoModalComponent} from "./modals/toolbar-info-modal/toolbar-info-modal.component";
 import {CaligraphyGardenPageComponent} from "./pages/caligraphy-garden-page/caligraphy-garden-page.component";
 import {ChanziModelService} from "./services/chanzi-model.service";
+import {ImageGenerationComponent} from "./image-generation/image-generation.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -84,6 +85,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MenuSidecarComponent,
     RadicalInfoModalComponent,
     ToolbarInfoModalComponent,
+    ImageGenerationComponent,
   ],
   imports: [
     BrowserModule,

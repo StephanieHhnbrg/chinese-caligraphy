@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {Router} from "@angular/router";
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ import {Router} from "@angular/router";
 export class AppComponent {
 
   public isSidecarEnabled = false;
+  public isTrainingDataGenerationActivated: boolean = environment.trainingDataGeneration;
+
   constructor(private translate: TranslateService, private router: Router) {
     this.translate.setDefaultLang('en');
     this.translate.use('en');

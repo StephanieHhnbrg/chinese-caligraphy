@@ -3,7 +3,10 @@
     Chanzi Model
 </h1>
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?color=blue)](./../LICENSE)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?color=blue)](./../LICENSE.md)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](https://www.python.org/)
+[![Tensorflow](https://img.shields.io/badge/Tensorflow-FFA800?logo=tensorflow&logoColor=fff)](https://www.tensorflow.org/)
+[![Matplotlib](https://custom-icon-badges.demolab.com/badge/Matplotlib-3776AB?logo=matplotlib&logoColor=fff)](https://matplotlib.org/)
 
 ### Introduction
 This directory contains the necessary scripts and image data to train a machine learning model for image classification.
@@ -19,11 +22,14 @@ To prevent overfitting, the dataset is split as follows:
 - Test data: 10%
 - Validation data: 10%
 
+Check out the [image generation process](./../src/app/image-generation/README.md) to create more data for the model training.
+
+
 ### Scripts
 This directory contains two scripts.
 - **train.py**: This script is used to train the model on the dataset. It processes the data, initializes the neural network, and trains it for the specified number of epochs. The resulting model is saved as ```chanzi_model.h5```. (Refer to the Training Process section for more details.)
 - **analyze_data.py**: This script helps analyze the dataset to uncover potential class imbalances. It generates statistics and visualizations to identify how different classes are distributed, which is crucial for addressing any data imbalances that might affect model performance.
-- 
+
 ### Training process
 #### Steps:
 1. Import libraries
@@ -71,7 +77,6 @@ Check your Python version using: `python --version`
 
    
 #### Library Versions
-numpy==1.26.4 \
 tensorflow==2.19.0 \
 tensorflow-estimator==2.15.0 \
 tensorflow-hub==0.16.1 \

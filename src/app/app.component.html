@@ -1,6 +1,12 @@
-<app-toolbar></app-toolbar>
-<div class="row">
-  <app-menu-sidecar *ngIf="isSidecarEnabled"></app-menu-sidecar>
-  <router-outlet></router-outlet>
+<div *ngIf="!isTrainingDataGenerationActivated; else trainingDataGeneration">
+  <app-toolbar></app-toolbar>
+  <div class="row">
+    <app-menu-sidecar *ngIf="isSidecarEnabled"></app-menu-sidecar>
+    <router-outlet></router-outlet>
+  </div>
 </div>
+
+<ng-template #trainingDataGeneration>
+  <app-image-generation></app-image-generation>
+</ng-template>
 

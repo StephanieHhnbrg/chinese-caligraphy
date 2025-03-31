@@ -1,0 +1,11 @@
+<h3>Training Data Generation with Cypress</h3>
+
+<div *ngIf="data.length > 0">
+  <span>Image Generation Data Loaded ({{data.length}})&nbsp;&nbsp;&nbsp;</span>
+  <button mat-flat-button (click)="displayNextImage()">
+    <mat-icon aria-hidden="false" fontIcon="chevron_right"></mat-icon>NEXT</button>
+  <p>&nbsp;</p>
+  <span class="item" *ngFor="let img of data">&nbsp;</span>
+  <!-- hack to create a loop in Cypress-->
+</div>
+
